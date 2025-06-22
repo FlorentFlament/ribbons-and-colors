@@ -20,31 +20,64 @@ text_overscan:  SUBROUTINE
         rts
 
 text_kernel:	SUBROUTINE
-        ldy #$16
-
-.big_loop:
-        lda #$ff
-        ldx #$ff
+        ;; Coarse positioning
         sta WSYNC
-
-        sta GRP0
-        stx GRP1
-
-        ldx #$05
-.rough_p0:
+        ldx #8
+.rough_p0_0:
         dex
-        bne .rough_p0
+        bne .rough_p0_0
         sta RESP0
         sta RESP1
 
-        lda #$07
+        ;; Fine positioning
+        lda #$00
         sta HMP0
-        lda #$60
+        lda #$00
         sta HMP1
 
-        dey
-        bne .big_loop
+        ;; Commit position and set player color
+        sta WSYNC
+        sta HMOVE
+        lda #$ff
+        sta GRP0
+        sta GRP1
 
+        ;; for 7 lines
+        ldx #7
+.block_loop_0:
+        sta WSYNC
+        dex
+        bne .block_loop_0
+
+        sta WSYNC
+        ldx #6
+.rough_p0_1:
+        dex
+        bne .rough_p0_1
+        sta RESP0
+        sta RESP1
+
+        ;; Fine positioning
+        lda #$00
+        sta HMP0
+        lda #$00
+        sta HMP1
+
+        ;; Commit position and set player color
+        sta WSYNC
+        sta HMOVE
+        lda #$ff
+        sta GRP0
+        sta GRP1
+
+        ;; for 7 lines
+        ldx #7
+.block_loop_1:
+        sta WSYNC
+        dex
+        bne .block_loop_1
+
+        sta WSYNC
         lda #$00
         sta GRP0
         sta GRP1
