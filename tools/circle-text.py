@@ -1,13 +1,13 @@
 import math
 from PIL import Image
 
-N = 14 # Number of characters
+N = 11 # Number of characters
 M = 10 # Number of steps between characters
 CHAR_HEIGHT = 8
-CIRCLE_RADIUS = 24
+CIRCLE_RADIUS = 52
 
-IM_WIDTH = 100
-IM_HEIGHT = 100
+IM_WIDTH = 120
+IM_HEIGHT = 120
 IM_DEPTH = 1 # 1 per pixel
 BUF_SIZE = IM_WIDTH * IM_HEIGHT * IM_DEPTH
 
@@ -54,10 +54,11 @@ def position(alpha):
     assert min(mxy) >= (CHAR_HEIGHT-1)
 
     # Check chunks of 5 characters in y
-    # And ensure they are spaced enough - so that we never have 5 sprites aligned
-    c = (y[i:i+5] for i in range(0, N-5))
+    # And ensure they are spaced enough - so that we never have 3 sprites aligned
+    c = (y[i:i+3] for i in range(0, N-3))
     dc = tuple(max(a) - min(a) for a in c)
-    assert min(dc) >= CHAR_HEIGHT
+    print(alpha, min(dc))
+    assert min(dc) >= CHAR_HEIGHT+1
 
     return zip(x,y)
 
@@ -73,7 +74,7 @@ def main():
             for j in range(y+cal, y+cal+CHAR_HEIGHT):
                 buf[IM_WIDTH*IM_DEPTH*j + i*IM_DEPTH] = c+1
 
-    im = Image.frombytes('P', (100, 100), bytes(buf))
+    im = Image.frombytes('P', (IM_WIDTH, IM_HEIGHT), bytes(buf))
     im.putpalette(PALETTE)
     im.show()
 
