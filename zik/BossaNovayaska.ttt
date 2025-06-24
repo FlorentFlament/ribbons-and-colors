@@ -1,0 +1,6359 @@
+{
+    "channels": [
+        {
+            "sequence": [
+                {
+                    "gototarget": -1,
+                    "patternindex": 1
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 3
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 1
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 4
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 1
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 3
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 1
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 5
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 8
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 9
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 8
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 9
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 8
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 9
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 8
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 9
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 8
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 9
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 6
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 7
+                }
+            ]
+        },
+        {
+            "sequence": [
+                {
+                    "gototarget": -1,
+                    "patternindex": 2
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 2
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 2
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 2
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 10
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 10
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 10
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 10
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 11
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 11
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 11
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 11
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 12
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 12
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 12
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 12
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 13
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 14
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 13
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 15
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 16
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 17
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 16
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 18
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 13
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 14
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 13
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 15
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 19
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 20
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 19
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 21
+                },
+                {
+                    "gototarget": -1,
+                    "patternindex": 22
+                }
+            ]
+        }
+    ],
+    "evenspeed": 4,
+    "globalspeed": true,
+    "instruments": [
+        {
+            "envelopeLength": 12,
+            "frequencies": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "name": "---",
+            "releaseStart": 11,
+            "sustainStart": 10,
+            "version": 1,
+            "volumes": [
+                10,
+                9,
+                8,
+                7,
+                6,
+                5,
+                4,
+                3,
+                2,
+                1,
+                0,
+                0
+            ],
+            "waveform": 16
+        },
+        {
+            "envelopeLength": 7,
+            "frequencies": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "name": "---",
+            "releaseStart": 6,
+            "sustainStart": 5,
+            "version": 1,
+            "volumes": [
+                9,
+                9,
+                9,
+                9,
+                8,
+                5,
+                0
+            ],
+            "waveform": 6
+        },
+        {
+            "envelopeLength": 2,
+            "frequencies": [
+                0,
+                0
+            ],
+            "name": "---",
+            "releaseStart": 1,
+            "sustainStart": 0,
+            "version": 1,
+            "volumes": [
+                0,
+                0
+            ],
+            "waveform": 16
+        },
+        {
+            "envelopeLength": 2,
+            "frequencies": [
+                0,
+                0
+            ],
+            "name": "---",
+            "releaseStart": 1,
+            "sustainStart": 0,
+            "version": 1,
+            "volumes": [
+                0,
+                0
+            ],
+            "waveform": 16
+        },
+        {
+            "envelopeLength": 2,
+            "frequencies": [
+                0,
+                0
+            ],
+            "name": "---",
+            "releaseStart": 1,
+            "sustainStart": 0,
+            "version": 1,
+            "volumes": [
+                0,
+                0
+            ],
+            "waveform": 16
+        },
+        {
+            "envelopeLength": 2,
+            "frequencies": [
+                0,
+                0
+            ],
+            "name": "---",
+            "releaseStart": 1,
+            "sustainStart": 0,
+            "version": 1,
+            "volumes": [
+                0,
+                0
+            ],
+            "waveform": 16
+        },
+        {
+            "envelopeLength": 2,
+            "frequencies": [
+                0,
+                0
+            ],
+            "name": "---",
+            "releaseStart": 1,
+            "sustainStart": 0,
+            "version": 1,
+            "volumes": [
+                0,
+                0
+            ],
+            "waveform": 16
+        }
+    ],
+    "metaAuthor": "",
+    "metaComment": "",
+    "metaName": "",
+    "oddspeed": 3,
+    "patterns": [
+        {
+            "evenspeed": 3,
+            "name": "vide",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 25
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 25
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 53
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 47
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "rm0a",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 25
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 4,
+            "name": "drum0a",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 4
+        },
+        {
+            "evenspeed": 3,
+            "name": "rm0b",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 53
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 47
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "rm0c",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 53
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 47
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "rm0d",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 53
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 47
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "rm+bass0a",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "rm+bass0b",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 53
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 47
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "rm+bass0c",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 53
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 47
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "rm+bass0d",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 53
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 56
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 1,
+                    "value": 22
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 47
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 4,
+            "name": "drum0b",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 4
+        },
+        {
+            "evenspeed": 4,
+            "name": "drum0c",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 4
+        },
+        {
+            "evenspeed": 4,
+            "name": "drum0d",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 4
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel0a",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel0b",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel0c",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 11
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel1a",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel1b",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel1c",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel2a",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 29
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 29
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel2b",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 26
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 29
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 29
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 51
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel2c",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 26
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 29
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 29
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 16
+                },
+                {
+                    "number": 1,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 10
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        },
+        {
+            "evenspeed": 3,
+            "name": "drum+mel0d",
+            "notes": [
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 61
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 48
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 16
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 42
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 18
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 18
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 14
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 46
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 21
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 1,
+                    "value": 24
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 18
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 0
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                },
+                {
+                    "number": 2,
+                    "type": 3,
+                    "value": 29
+                },
+                {
+                    "number": 0,
+                    "type": 0,
+                    "value": 0
+                }
+            ],
+            "oddspeed": 3
+        }
+    ],
+    "percussion": [
+        {
+            "envelopeLength": 3,
+            "frequencies": [
+                5,
+                9,
+                12
+            ],
+            "name": "KickShort",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                15,
+                13,
+                9
+            ],
+            "waveforms": [
+                6,
+                6,
+                6
+            ]
+        },
+        {
+            "envelopeLength": 6,
+            "frequencies": [
+                5,
+                28,
+                8,
+                2,
+                1,
+                2
+            ],
+            "name": "SnareShort",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                15,
+                15,
+                14,
+                11,
+                7,
+                4
+            ],
+            "waveforms": [
+                8,
+                12,
+                6,
+                8,
+                8,
+                8
+            ]
+        },
+        {
+            "envelopeLength": 4,
+            "frequencies": [
+                0,
+                3,
+                1,
+                1
+            ],
+            "name": "SheShe",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "waveforms": [
+                8,
+                8,
+                8,
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        },
+        {
+            "envelopeLength": 1,
+            "frequencies": [
+                0
+            ],
+            "name": "---",
+            "overlay": false,
+            "version": 1,
+            "volumes": [
+                0
+            ],
+            "waveforms": [
+                8
+            ]
+        }
+    ],
+    "rowsperbeat": 4,
+    "startpattern0": 0,
+    "startpattern1": 0,
+    "tvmode": "pal",
+    "version": 1
+}
