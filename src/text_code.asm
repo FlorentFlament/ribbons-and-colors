@@ -1,3 +1,5 @@
+BORDER_COLOR = $ff
+
 text_init:	SUBROUTINE
         INCLUDE "bossa-novayaska_init.asm"
 	;; No reflection - 1 copy small
@@ -6,6 +8,7 @@ text_init:	SUBROUTINE
 	sta REFP1
 	sta NUSIZ0
 	sta NUSIZ1
+
         ;; Sprites color
         lda #$ff
         sta COLUP0
@@ -19,67 +22,124 @@ text_vblank:	SUBROUTINE
 text_overscan:  SUBROUTINE
         rts
 
-text_kernel:	SUBROUTINE
+;; Position Sprites according to sp0_pos and sp1_pos
+        ;; sp0_pos and sp1_ops respectively contain sprite0 and sprite1 positions
+
+sp0_pos = ptr1
+sp1_pos = ptr1 + 1
+;;; Macro argument is 0 or 1, the sprite to position
+;;; This consumes a display line
+        MAC POSITION_ONE_SPRITE
+        sta WSYNC
         ;; Coarse positioning
-        sta WSYNC
-        ldx #8
-.rough_p0_0:
-        dex
-        bne .rough_p0_0
-        sta RESP0
-        sta RESP1
+        lda sp{1}_pos
+        ;; coarse loop consumes 15 pixels (3 * 5cycles)
+.coarse_loop:
+        sbc #$0f
+        bcs .coarse_loop
+        sta RESP{1}
 
-        ;; Fine positioning
+        adc #$07
+        eor #$ff
+        REPEAT 4
+        asl
+        REPEND
+        sta sp{1}_pos           ; Remaining pixels to adjust for
+        ENDM
+
+;;; Position the 2 VCS sprites
+;;; sp0_pos and sp1_pos contain their respective positions
+;;; Consumes 2 display lines
+;;; WSYNC and HMOVE need to be performed after that
+        MAC POSITION_BOTH_SPRITES
+        ;; Coarse positioning
+        POSITION_ONE_SPRITE 0
+        POSITION_ONE_SPRITE 1
+
+        ;; Fine tune sprites position
+        lda sp0_pos
+        sta HMP0
+        lda sp1_pos
+        sta HMP1
+        ENDM
+
+sprite_it  = ptr0
+sprite_cnt = ptr0 + 1
+text_kernel:	SUBROUTINE
+        sta WSYNC
+        ldx #BORDER_COLOR
+        stx COLUBK
+        REPEAT 3
+        sta WSYNC
+        REPEND
+        ldx #$00
+        stx COLUBK
+
+        ldx #12
+        stx sprite_cnt
+.column_loop:
+        ldx #120                ; Fetch sprite0 position
+        stx sp0_pos
+        ldx #60                 ; Fetch sprite1 position
+        stx sp1_pos
+        POSITION_BOTH_SPRITES
+
+        ldx #11
+        stx sprite_it
+.sprite_loop:
+        sta WSYNC
+        ;; (1) Trick do reduce sprites vertical spacing
+        ;; by commiting horizontal moves while setting sprites pixels
+        sta HMOVE
+
+        lda sprite_cnt          ; Fetch background color
+        sta COLUPF
+        lda #$ff                ; Fetch sprite0 data
+        sta GRP0
+        lda #$ff                ; Fetch sprite1 data
+        sta GRP1
+
+        ;; Don't move sprites further - Part of trick (1)
+        ;; Enough cycles need be consumed earlier
         lda #$00
         sta HMP0
-        lda #$00
         sta HMP1
 
-        ;; Commit position and set player color
-        sta WSYNC
-        sta HMOVE
-        lda #$ff
-        sta GRP0
-        sta GRP1
-
-        ;; for 7 lines
-        ldx #7
-.block_loop_0:
-        sta WSYNC
+        ldx sprite_it
         dex
-        bne .block_loop_0
-
-        sta WSYNC
-        ldx #6
-.rough_p0_1:
-        dex
-        bne .rough_p0_1
-        sta RESP0
-        sta RESP1
-
-        ;; Fine positioning
-        lda #$00
-        sta HMP0
-        lda #$00
-        sta HMP1
-
-        ;; Commit position and set player color
-        sta WSYNC
-        sta HMOVE
-        lda #$ff
-        sta GRP0
-        sta GRP1
-
-        ;; for 7 lines
-        ldx #7
-.block_loop_1:
-        sta WSYNC
-        dex
-        bne .block_loop_1
+        stx sprite_it
+        bpl .sprite_loop
 
         sta WSYNC
         lda #$00
         sta GRP0
         sta GRP1
+
+        ldx sprite_cnt
+        dex
+        stx sprite_cnt
+        bpl .column_loop
+
+        sta WSYNC
+        ldx #BORDER_COLOR
+        stx COLUBK
+        REPEAT 3
+        sta WSYNC
+        REPEND
+        ldx #$00
+        stx COLUBK
 
         rts
+
+circle_positions_up:
+        dc.b    $00
+        dc.b    $02, $03, $04, $05, $02, $03, $04, $05
+        dc.b    $00, $01, $02, $03, $02, $03, $04, $05
+hmove_p0:
+        dc.b    $00
+        dc.b    $20, $30, $40, $50, $60, $70, $80, $10
+        dc.b    $20, $30, $40, $50, $60, $70, $80, $10
+hmove_p1:
+        dc.b    $00
+        dc.b    $20, $30, $40, $50, $60, $70, $80, $10
+        dc.b    $20, $30, $40, $50, $60, $70, $80, $10
