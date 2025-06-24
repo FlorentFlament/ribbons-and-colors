@@ -15,8 +15,8 @@
 ; See the License for the specific language governing permissions and
 ; limitations under the License.
 
-; Song author: 
-; Song name: 
+; Song author: glafouk
+; Song name: glafouk
 
 ; @com.wudsn.ide.asm.hardware=ATARI2600
 
@@ -44,24 +44,24 @@ tt_TrackDataStart:
 
 ; Instrument master CTRL values
 tt_InsCtrlTable:
-        dc.b $04, $0c, $06
+        dc.b $04, $0c, $0c, $01
 
 
 ; Instrument Attack/Decay start indexes into ADSR tables.
 tt_InsADIndexes:
-        dc.b $00, $00, $0e
+        dc.b $00, $00, $0a, $10
 
 
 ; Instrument Sustain start indexes into ADSR tables
 tt_InsSustainIndexes:
-        dc.b $0a, $0a, $13
+        dc.b $06, $06, $0c, $11
 
 
 ; Instrument Release start indexes into ADSR tables
 ; Caution: Values are stored with an implicit -1 modifier! To get the
 ; real index, add 1.
 tt_InsReleaseIndexes:
-        dc.b $0b, $0b, $14
+        dc.b $07, $07, $0d, $12
 
 
 ; AUDVx and AUDFx ADSR envelope values.
@@ -74,11 +74,12 @@ tt_InsReleaseIndexes:
 ; The end of the release phase is encoded by a 0.
 tt_InsFreqVolTable:
 ; 0+1: ---
-        dc.b $8a, $89, $88, $87, $86, $85, $84, $83
-        dc.b $82, $81, $80, $00, $80, $00
+        dc.b $88, $85, $82, $85, $82, $84, $82, $00
+        dc.b $80, $00
 ; 2: ---
-        dc.b $89, $89, $89, $89, $88, $85, $00, $80
-        dc.b $00
+        dc.b $8d, $8d, $87, $00, $80, $00
+; 3: ---
+        dc.b $84, $84, $00, $84, $00
 
 
 
@@ -107,7 +108,7 @@ tt_PercIndexes:
 ; TT_USE_OVERLAY)
 tt_PercFreqTable:
 ; 0: SheShe
-        dc.b $00, $03, $01, $01, $00
+        dc.b $00, $02, $02, $00, $00
 ; 1: KickShort
         dc.b $05, $09, $0c, $00
 ; 2: SnareShort
@@ -120,7 +121,7 @@ tt_PercFreqTable:
 ; 0 means end of percussion data.
 tt_PercCtrlVolTable:
 ; 0: SheShe
-        dc.b $82, $82, $81, $81, $00
+        dc.b $85, $84, $83, $82, $00
 ; 1: KickShort
         dc.b $6f, $6d, $69, $00
 ; 2: SnareShort
@@ -181,66 +182,66 @@ TT_FIRST_PERC   = 17
 
 ; rm0a
 tt_pattern0:
-        dc.b $4e, $08, $08, $08, $4e, $08, $5d, $08
-        dc.b $08, $08, $4e, $08, $58, $08, $50, $08
-        dc.b $5d, $08, $50, $08, $08, $08, $50, $08
-        dc.b $50, $08, $08, $08, $50, $08, $08, $08
+        dc.b $4e, $08, $10, $08, $4e, $08, $7d, $08
+        dc.b $10, $08, $4e, $08, $78, $08, $50, $08
+        dc.b $7d, $08, $50, $08, $10, $08, $50, $08
+        dc.b $50, $08, $10, $08, $50, $08, $10, $08
         dc.b $00
 
 ; rm0b
 tt_pattern1:
-        dc.b $4e, $08, $08, $08, $4e, $08, $55, $08
-        dc.b $08, $08, $4e, $08, $5d, $08, $53, $08
-        dc.b $5d, $08, $53, $08, $58, $08, $53, $08
-        dc.b $53, $08, $08, $08, $50, $08, $4f, $08
+        dc.b $4e, $08, $10, $08, $4e, $08, $75, $08
+        dc.b $10, $08, $4e, $08, $7d, $08, $53, $08
+        dc.b $7d, $08, $53, $08, $78, $08, $53, $08
+        dc.b $53, $08, $10, $08, $50, $08, $4f, $08
         dc.b $00
 
 ; rm0c
 tt_pattern2:
-        dc.b $4e, $08, $08, $08, $4e, $08, $55, $08
-        dc.b $08, $08, $4e, $08, $5d, $08, $3d, $08
-        dc.b $5d, $08, $4a, $08, $58, $08, $4e, $08
-        dc.b $4a, $08, $5d, $08, $50, $08, $4f, $08
+        dc.b $4e, $08, $10, $08, $4e, $08, $75, $08
+        dc.b $10, $08, $4e, $08, $7d, $08, $3d, $08
+        dc.b $7d, $08, $4a, $08, $78, $08, $4e, $08
+        dc.b $4a, $08, $7d, $08, $50, $08, $4f, $08
         dc.b $00
 
 ; rm0d
 tt_pattern3:
-        dc.b $4e, $08, $08, $08, $4e, $08, $55, $08
-        dc.b $08, $08, $4e, $08, $5d, $08, $3d, $08
-        dc.b $5d, $08, $38, $08, $58, $08, $4a, $08
-        dc.b $3d, $08, $5d, $08, $50, $08, $4f, $08
+        dc.b $4e, $08, $10, $08, $4e, $08, $75, $08
+        dc.b $10, $08, $4e, $08, $7d, $08, $3d, $08
+        dc.b $7d, $08, $38, $08, $78, $08, $4a, $08
+        dc.b $3d, $08, $7d, $08, $50, $08, $4f, $08
         dc.b $00
 
 ; rm+bass0a
 tt_pattern4:
-        dc.b $4e, $08, $76, $08, $4e, $08, $5d, $08
-        dc.b $76, $08, $4e, $08, $58, $08, $50, $08
-        dc.b $5d, $08, $50, $08, $72, $08, $50, $08
-        dc.b $50, $08, $78, $08, $50, $08, $78, $08
+        dc.b $4e, $08, $97, $08, $4e, $08, $7d, $08
+        dc.b $97, $08, $4e, $08, $78, $08, $50, $08
+        dc.b $7d, $08, $50, $08, $93, $08, $50, $08
+        dc.b $50, $08, $9a, $08, $50, $08, $9a, $08
         dc.b $00
 
 ; rm+bass0b
 tt_pattern5:
-        dc.b $4e, $08, $76, $08, $4e, $08, $55, $08
-        dc.b $76, $08, $4e, $08, $5d, $08, $53, $08
-        dc.b $70, $08, $53, $08, $72, $08, $53, $08
-        dc.b $53, $08, $76, $08, $50, $08, $4f, $08
+        dc.b $4e, $08, $97, $08, $4e, $08, $75, $08
+        dc.b $97, $08, $4e, $08, $7d, $08, $53, $08
+        dc.b $8f, $08, $53, $08, $91, $08, $53, $08
+        dc.b $53, $08, $97, $08, $50, $08, $4f, $08
         dc.b $00
 
 ; rm+bass0c
 tt_pattern6:
-        dc.b $4e, $08, $70, $08, $4e, $08, $55, $08
-        dc.b $72, $08, $4e, $08, $5d, $08, $3d, $08
-        dc.b $76, $08, $4a, $08, $58, $08, $4e, $08
-        dc.b $4a, $08, $76, $08, $50, $08, $4f, $08
+        dc.b $4e, $08, $93, $08, $4e, $08, $75, $08
+        dc.b $93, $08, $4e, $08, $7d, $08, $3d, $08
+        dc.b $91, $08, $4a, $08, $78, $08, $4e, $08
+        dc.b $4a, $08, $97, $08, $50, $08, $4f, $08
         dc.b $00
 
 ; rm+bass0d
 tt_pattern7:
-        dc.b $4e, $08, $72, $08, $4e, $08, $55, $08
-        dc.b $70, $08, $4e, $08, $5d, $08, $3d, $08
-        dc.b $72, $08, $38, $08, $58, $08, $4a, $08
-        dc.b $3d, $08, $76, $08, $50, $08, $4f, $08
+        dc.b $4e, $08, $91, $08, $4e, $08, $75, $08
+        dc.b $91, $08, $4e, $08, $7d, $08, $3d, $08
+        dc.b $97, $08, $38, $08, $78, $08, $4a, $08
+        dc.b $3d, $08, $93, $08, $50, $08, $4f, $08
         dc.b $00
 
 ; drum0a
@@ -275,8 +276,16 @@ tt_pattern11:
         dc.b $12, $08, $11, $11, $13, $08, $12, $08
         dc.b $00
 
-; drum+mel0a
+; drum0e
 tt_pattern12:
+        dc.b $12, $08, $08, $08, $11, $08, $12, $08
+        dc.b $12, $08, $08, $08, $13, $08, $11, $08
+        dc.b $12, $08, $08, $08, $11, $08, $12, $08
+        dc.b $12, $08, $11, $11, $13, $08, $13, $08
+        dc.b $00
+
+; drum+mel0a
+tt_pattern13:
         dc.b $12, $08, $2e, $08, $30, $08, $12, $08
         dc.b $12, $08, $35, $08, $13, $08, $32, $08
         dc.b $12, $08, $3d, $08, $38, $08, $12, $08
@@ -288,7 +297,7 @@ tt_pattern12:
         dc.b $00
 
 ; drum+mel0b
-tt_pattern13:
+tt_pattern14:
         dc.b $12, $08, $2e, $08, $2a, $08, $12, $08
         dc.b $12, $08, $30, $08, $13, $08, $2e, $08
         dc.b $12, $08, $38, $08, $35, $08, $12, $08
@@ -300,7 +309,7 @@ tt_pattern13:
         dc.b $00
 
 ; drum+mel0c
-tt_pattern14:
+tt_pattern15:
         dc.b $12, $08, $2e, $08, $2a, $08, $12, $08
         dc.b $12, $08, $2e, $08, $13, $08, $32, $08
         dc.b $12, $08, $30, $08, $2e, $08, $12, $08
@@ -312,7 +321,7 @@ tt_pattern14:
         dc.b $00
 
 ; drum+mel1a
-tt_pattern15:
+tt_pattern16:
         dc.b $12, $08, $3d, $4a, $3d, $08, $12, $38
         dc.b $12, $4a, $08, $3d, $13, $08, $38, $08
         dc.b $12, $08, $35, $08, $3d, $08, $12, $4a
@@ -324,7 +333,7 @@ tt_pattern15:
         dc.b $00
 
 ; drum+mel1b
-tt_pattern16:
+tt_pattern17:
         dc.b $12, $08, $38, $3d, $38, $08, $12, $35
         dc.b $12, $32, $08, $3d, $13, $08, $38, $08
         dc.b $12, $08, $2e, $08, $30, $08, $12, $4a
@@ -336,7 +345,7 @@ tt_pattern16:
         dc.b $00
 
 ; drum+mel1c
-tt_pattern17:
+tt_pattern18:
         dc.b $12, $08, $2a, $2e, $30, $08, $12, $2e
         dc.b $12, $2a, $08, $30, $13, $08, $32, $08
         dc.b $12, $08, $38, $08, $32, $08, $12, $30
@@ -344,11 +353,11 @@ tt_pattern17:
         dc.b $12, $08, $32, $30, $2a, $08, $12, $2e
         dc.b $12, $08, $35, $08, $13, $08, $32, $08
         dc.b $12, $08, $4a, $08, $4e, $08, $12, $35
-        dc.b $12, $08, $32, $30, $13, $38, $13, $08
+        dc.b $12, $08, $32, $08, $13, $08, $13, $08
         dc.b $00
 
 ; drum+mel2a
-tt_pattern18:
+tt_pattern19:
         dc.b $12, $08, $38, $08, $3d, $08, $12, $08
         dc.b $12, $08, $4a, $08, $13, $08, $3d, $08
         dc.b $12, $08, $4e, $4a, $3d, $08, $12, $3d
@@ -360,7 +369,7 @@ tt_pattern18:
         dc.b $00
 
 ; drum+mel2b
-tt_pattern19:
+tt_pattern20:
         dc.b $12, $08, $38, $08, $35, $08, $12, $08
         dc.b $12, $08, $4a, $08, $13, $08, $3d, $08
         dc.b $12, $08, $3d, $4a, $38, $08, $12, $35
@@ -372,7 +381,7 @@ tt_pattern19:
         dc.b $00
 
 ; drum+mel2c
-tt_pattern20:
+tt_pattern21:
         dc.b $12, $08, $35, $08, $2e, $08, $12, $08
         dc.b $12, $08, $30, $08, $13, $08, $35, $08
         dc.b $12, $08, $3d, $4a, $38, $08, $12, $35
@@ -380,11 +389,11 @@ tt_pattern20:
         dc.b $12, $08, $35, $08, $35, $08, $12, $30
         dc.b $12, $08, $38, $08, $13, $08, $4a, $08
         dc.b $12, $08, $2e, $08, $30, $08, $12, $08
-        dc.b $12, $08, $32, $30, $13, $08, $2a, $08
+        dc.b $12, $08, $32, $08, $13, $08, $13, $08
         dc.b $00
 
 ; drum+mel0d
-tt_pattern21:
+tt_pattern22:
         dc.b $5d, $08, $2e, $08, $11, $08, $11, $08
         dc.b $4a, $08, $35, $08, $11, $08, $11, $08
         dc.b $50, $08, $3d, $08, $11, $08, $11, $08
@@ -393,6 +402,30 @@ tt_pattern21:
         dc.b $4a, $08, $32, $08, $11, $08, $11, $08
         dc.b $4e, $08, $38, $08, $11, $08, $11, $08
         dc.b $38, $08, $11, $11, $11, $08, $11, $08
+        dc.b $00
+
+; drum+mel0e
+tt_pattern23:
+        dc.b $2e, $08, $2a, $08, $11, $08, $11, $08
+        dc.b $30, $08, $2e, $08, $11, $08, $11, $08
+        dc.b $38, $08, $35, $08, $11, $08, $11, $08
+        dc.b $3d, $08, $35, $08, $11, $08, $11, $08
+        dc.b $32, $08, $35, $08, $11, $08, $11, $08
+        dc.b $32, $08, $30, $08, $11, $08, $11, $08
+        dc.b $38, $08, $35, $08, $11, $08, $11, $08
+        dc.b $32, $08, $11, $11, $11, $08, $11, $08
+        dc.b $00
+
+; drum+mel0f
+tt_pattern24:
+        dc.b $2e, $08, $2a, $08, $11, $08, $11, $08
+        dc.b $2e, $08, $32, $08, $11, $08, $11, $08
+        dc.b $30, $08, $2e, $08, $11, $08, $11, $08
+        dc.b $30, $08, $35, $08, $11, $08, $11, $08
+        dc.b $3d, $08, $38, $08, $11, $08, $11, $08
+        dc.b $30, $08, $2e, $08, $11, $08, $11, $08
+        dc.b $4a, $08, $35, $08, $12, $08, $12, $08
+        dc.b $35, $08, $11, $08, $12, $08, $11, $08
         dc.b $00
 
 
@@ -418,14 +451,16 @@ tt_PatternPtrLo:
         dc.b <tt_pattern8, <tt_pattern9, <tt_pattern10, <tt_pattern11
         dc.b <tt_pattern12, <tt_pattern13, <tt_pattern14, <tt_pattern15
         dc.b <tt_pattern16, <tt_pattern17, <tt_pattern18, <tt_pattern19
-        dc.b <tt_pattern20, <tt_pattern21
+        dc.b <tt_pattern20, <tt_pattern21, <tt_pattern22, <tt_pattern23
+        dc.b <tt_pattern24
 tt_PatternPtrHi:
         dc.b >tt_pattern0, >tt_pattern1, >tt_pattern2, >tt_pattern3
         dc.b >tt_pattern4, >tt_pattern5, >tt_pattern6, >tt_pattern7
         dc.b >tt_pattern8, >tt_pattern9, >tt_pattern10, >tt_pattern11
         dc.b >tt_pattern12, >tt_pattern13, >tt_pattern14, >tt_pattern15
         dc.b >tt_pattern16, >tt_pattern17, >tt_pattern18, >tt_pattern19
-        dc.b >tt_pattern20, >tt_pattern21        
+        dc.b >tt_pattern20, >tt_pattern21, >tt_pattern22, >tt_pattern23
+        dc.b >tt_pattern24        
 
 
 ; ---------------------------------------------------------------------
@@ -446,15 +481,16 @@ tt_SequenceTable:
         dc.b $04, $05, $04, $06, $04, $05, $04, $07
         dc.b $04, $05, $04, $06, $04, $05, $04, $07
         dc.b $04, $05, $04, $06, $04, $05, $04, $07
-        dc.b $04, $05
+        dc.b $04, $05, $04, $06, $00, $01, $00, $03
+        dc.b $88
 
         
         ; ---------- Channel 1 ----------
         dc.b $08, $08, $08, $08, $09, $09, $09, $09
-        dc.b $0a, $0a, $0a, $0a, $0b, $0b, $0b, $0b
-        dc.b $0c, $0d, $0c, $0e, $0f, $10, $0f, $11
-        dc.b $0c, $0d, $0c, $0e, $12, $13, $12, $14
-        dc.b $15
+        dc.b $0a, $0a, $0a, $0a, $0b, $0b, $0b, $0c
+        dc.b $0d, $0e, $0d, $0f, $10, $11, $10, $12
+        dc.b $0d, $0e, $0d, $0f, $13, $14, $13, $15
+        dc.b $16, $17, $16, $18, $c1
 
 
         echo "Track size: ", *-tt_TrackDataStart

@@ -15,8 +15,8 @@
 ; See the License for the specific language governing permissions and
 ; limitations under the License.
 
-; Song author: 
-; Song name: 
+; Song author: glafouk
+; Song name: glafouk
 
 ; @com.wudsn.ide.asm.hardware=ATARI2600
 
@@ -29,7 +29,7 @@
 ; =====================================================================
         lda #0
         sta tt_cur_pat_index_c0
-        lda #50
+        lda #57
         sta tt_cur_pat_index_c1
         ; the rest should be 0 already from startup code. If not,
         ; set the following variables to 0 manually:
