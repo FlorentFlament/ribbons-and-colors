@@ -8,6 +8,16 @@ text_init:	SUBROUTINE
 	sta REFP1
 	sta NUSIZ0
 	sta NUSIZ1
+        sta COLUBK
+        sta COLUPF
+
+        lda #$01                ; Mirror playfield
+        sta CTRLPF
+        lda #$cf
+        sta PF0
+        lda #$ff
+        sta PF1
+        sta PF2
 
         ;; Sprites color
         lda #$ff
@@ -31,6 +41,11 @@ sp1_pos = ptr1 + 1
 ;;; This consumes a display line
         MAC POSITION_ONE_SPRITE
         sta WSYNC
+        ;; Clear sprites there to avoid wasting a scanline
+        lda #$00
+        sta GRP0
+        sta GRP1
+
         ;; Coarse positioning
         lda sp{1}_pos
         ;; coarse loop consumes 15 pixels (3 * 5cycles)
@@ -66,21 +81,12 @@ sp1_pos = ptr1 + 1
 sprite_it  = ptr0
 sprite_cnt = ptr0 + 1
 text_kernel:	SUBROUTINE
-        sta WSYNC
-        ldx #BORDER_COLOR
-        stx COLUBK
-        REPEAT 3
-        sta WSYNC
-        REPEND
-        ldx #$00
-        stx COLUBK
-
         ldx #12
         stx sprite_cnt
 .column_loop:
-        ldx #120                ; Fetch sprite0 position
+        ldx #150                ; Fetch sprite0 position
         stx sp0_pos
-        ldx #60                 ; Fetch sprite1 position
+        ldx #30                 ; Fetch sprite1 position
         stx sp1_pos
         POSITION_BOTH_SPRITES
 
@@ -93,6 +99,9 @@ text_kernel:	SUBROUTINE
         sta HMOVE
 
         lda sprite_cnt          ; Fetch background color
+        and #$07
+        tax
+        lda bg_table,X
         sta COLUPF
         lda #$ff                ; Fetch sprite0 data
         sta GRP0
@@ -110,26 +119,20 @@ text_kernel:	SUBROUTINE
         stx sprite_it
         bpl .sprite_loop
 
-        sta WSYNC
-        lda #$00
-        sta GRP0
-        sta GRP1
-
         ldx sprite_cnt
         dex
         stx sprite_cnt
         bpl .column_loop
 
         sta WSYNC
-        ldx #BORDER_COLOR
-        stx COLUBK
-        REPEAT 3
-        sta WSYNC
-        REPEND
-        ldx #$00
-        stx COLUBK
-
+        lda #$00
+        sta GRP0
+        sta GRP1
+        sta COLUPF
         rts
+
+bg_table:
+        dc.b    $90, $92, $94, $96, $98, $96, $94, $92
 
 circle_positions_up:
         dc.b    $00
