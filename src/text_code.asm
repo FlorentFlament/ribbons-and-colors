@@ -10,15 +10,14 @@ text_init:	SUBROUTINE
 	sta NUSIZ1
         sta COLUBK
         sta COLUPF
-
-        lda #$01                ; Mirror playfield
+        ;; Mirror playfield
+        lda #$01
         sta CTRLPF
         lda #$cf
         sta PF0
         lda #$ff
         sta PF1
         sta PF2
-
         ;; Sprites color
         lda #$ff
         sta COLUP0
@@ -39,12 +38,13 @@ sp0_pos = ptr1
 sp1_pos = ptr1 + 1
 ;;; Macro argument is 0 or 1, the sprite to position
 ;;; This consumes a display line
-        MAC POSITION_ONE_SPRITE
-        sta WSYNC
+        MAC COARSE_POSITION_ONE_SPRITE
         ;; Clear sprites there to avoid wasting a scanline
         lda #$00
         sta GRP0
         sta GRP1
+        ;; Set carry for subsequent substrations
+        sec
 
         ;; Coarse positioning
         lda sp{1}_pos
@@ -53,13 +53,18 @@ sp1_pos = ptr1 + 1
         sbc #$0f
         bcs .coarse_loop
         sta RESP{1}
+        sta sp{1}_pos           ; Save remaining pixels for fine move
+        ENDM
 
-        adc #$07
+        MAC FINE_POSITION_ONE_SPRITE
+        lda sp{1}_pos
         eor #$ff
+        sec
+        sbc #$08
         REPEAT 4
         asl
         REPEND
-        sta sp{1}_pos           ; Remaining pixels to adjust for
+        sta HMP{1}
         ENDM
 
 ;;; Position the 2 VCS sprites
@@ -68,14 +73,14 @@ sp1_pos = ptr1 + 1
 ;;; WSYNC and HMOVE need to be performed after that
         MAC POSITION_BOTH_SPRITES
         ;; Coarse positioning
-        POSITION_ONE_SPRITE 0
-        POSITION_ONE_SPRITE 1
-
-        ;; Fine tune sprites position
-        lda sp0_pos
-        sta HMP0
-        lda sp1_pos
-        sta HMP1
+        sta WSYNC
+        COARSE_POSITION_ONE_SPRITE 0
+        sta WSYNC
+        COARSE_POSITION_ONE_SPRITE 1
+        ;; Fine sprites position
+        sta WSYNC
+        FINE_POSITION_ONE_SPRITE 0
+        FINE_POSITION_ONE_SPRITE 1
         ENDM
 
 sprite_it  = ptr0
@@ -84,9 +89,12 @@ text_kernel:	SUBROUTINE
         ldx #12
         stx sprite_cnt
 .column_loop:
-        ldx #150                ; Fetch sprite0 position
+        ;; Width is 144 pixels = 160 - 16 (2x8 borders)
+        ;; First pixel for sp0_pos = #17
+        ;; First out of screen pix for #161
+        ldx #17+36-4            ; Fetch sprite0 position
         stx sp0_pos
-        ldx #30                 ; Fetch sprite1 position
+        ldx #17+3*36-4          ; Fetch sprite1 position
         stx sp1_pos
         POSITION_BOTH_SPRITES
 
