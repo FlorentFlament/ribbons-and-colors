@@ -86,6 +86,20 @@ sp1_pos = ptr1 + 1
 sprite_it  = ptr0
 sprite_cnt = ptr0 + 1
 text_kernel:	SUBROUTINE
+        ;; Header offset
+        clc
+        lda frame_cnt
+        and #$0f                ; in [0  , 15]
+        eor #$ff                ; in [-16, -1]
+        adc #$0f                ; in [-1 , 14]
+        tax
+        bmi .display_column
+.header_loop:
+        sta WSYNC
+        dex
+        bpl .header_loop
+
+.display_column:
         ldx #12
         stx sprite_cnt
 .column_loop:
