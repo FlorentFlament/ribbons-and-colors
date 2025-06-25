@@ -138,7 +138,7 @@ text_kernel:	SUBROUTINE
         sta sp1_pos
         POSITION_BOTH_SPRITES
 
-        lda #11
+        lda #12
         sta sprite_it
 .sprite_loop:
         sta WSYNC
