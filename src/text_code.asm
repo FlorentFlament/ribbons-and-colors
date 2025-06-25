@@ -71,17 +71,46 @@ text_overscan:  SUBROUTINE
 ;;; WSYNC and HMOVE need to be performed after that
         MAC POSITION_BOTH_SPRITES
         ;; Coarse positioning
-        sta WSYNC
+        ldx line_cnt            ; Use time after setting sprites to perform computation
+        stx WSYNC
+        stx COLUPF
+        inx
+        stx line_cnt
         COARSE_POSITION_ONE_SPRITE 0
         sta WSYNC
+        SET_BACKGROUND_COLOR
         COARSE_POSITION_ONE_SPRITE 1
         ;; Fine sprites position
         sta WSYNC
+        SET_BACKGROUND_COLOR
         FINE_POSITION_ONE_SPRITE 0
         FINE_POSITION_ONE_SPRITE 1
         ENDM
 
+;;; Uses A and Y registers
+        MAC SET_BACKGROUND_COLOR
+        lda line_cnt
+        sta COLUPF
+        inc line_cnt
+        ENDM
+
 text_kernel:	SUBROUTINE
+        lda frame_cnt
+        sta line_cnt
+        lda frame_cnt+1
+        ror
+        tax
+        lda line_cnt
+        ror
+        sta line_cnt
+        txa
+        ror
+        lda line_cnt
+        ror
+        sta line_cnt
+        eor #$ff
+        sta line_cnt
+
         ;; Header offset
         clc
         lda frame_cnt
@@ -89,10 +118,11 @@ text_kernel:	SUBROUTINE
         eor #$ff                ; in [-16, -1]
         adc #$0f                ; in [-1 , 14]
         bmi .display_column
-        sec                     ; Though there's necessary a carry at this point
+        tax
 .header_loop:
         sta WSYNC
-        sbc #$01
+        SET_BACKGROUND_COLOR
+        dex
         bpl .header_loop
 
 .display_column:
@@ -102,9 +132,9 @@ text_kernel:	SUBROUTINE
         ;; Width is 144 pixels = 160 - 16 (2x8 borders)
         ;; First pixel for sp0_pos = #17
         ;; First out of screen pix for #161
-        lda #17+36-4            ; Fetch sprite0 position
+        lda #0                 ; Fetch sprite0 position
         sta sp0_pos
-        lda #17+3*36-4          ; Fetch sprite1 position
+        lda #113                 ; Fetch sprite1 position
         sta sp1_pos
         POSITION_BOTH_SPRITES
 
@@ -116,11 +146,7 @@ text_kernel:	SUBROUTINE
         ;; by commiting horizontal moves while setting sprites pixels
         sta HMOVE
 
-        lda sprite_cnt          ; Fetch background color
-        and #$07
-        tax
-        lda bg_table,X
-        sta COLUPF
+        SET_BACKGROUND_COLOR
         lda #$ff                ; Fetch sprite0 data
         sta GRP0
         lda #$ff                ; Fetch sprite1 data
@@ -140,7 +166,10 @@ text_kernel:	SUBROUTINE
         ldx sprite_cnt
         dex
         stx sprite_cnt
-        bpl .column_loop
+        bmi .end
+        jmp .column_loop
+.end:
+
 
         sta WSYNC
         lda #$00
@@ -148,6 +177,3 @@ text_kernel:	SUBROUTINE
         sta GRP1
         sta COLUPF
         rts
-
-bg_table:
-        dc.b    $90, $92, $94, $96, $98, $96, $94, $92
