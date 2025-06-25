@@ -1,5 +1,3 @@
-BORDER_COLOR = $ff
-
 ;;; Uses A register
 text_init:	SUBROUTINE
         INCLUDE "bossa-novayaska_init.asm"
@@ -34,8 +32,6 @@ text_overscan:  SUBROUTINE
 
 ;;; Position Sprites according to sp0_pos and sp1_pos
 ;;; sp0_pos and sp1_ops respectively contain sprite0 and sprite1 positions
-sp0_pos = ptr1
-sp1_pos = ptr1 + 1
 ;;; Macro argument is 0 or 1, the sprite to position
 ;;; This consumes a display line
 ;;; Uses A register
@@ -85,8 +81,6 @@ sp1_pos = ptr1 + 1
         FINE_POSITION_ONE_SPRITE 1
         ENDM
 
-sprite_it  = ptr0
-sprite_cnt = ptr0 + 1
 text_kernel:	SUBROUTINE
         ;; Header offset
         clc
