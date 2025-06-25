@@ -1,5 +1,6 @@
 BORDER_COLOR = $ff
 
+;;; Uses A register
 text_init:	SUBROUTINE
         INCLUDE "bossa-novayaska_init.asm"
 	;; No reflection - 1 copy small
@@ -31,24 +32,22 @@ text_vblank:	SUBROUTINE
 text_overscan:  SUBROUTINE
         rts
 
-;; Position Sprites according to sp0_pos and sp1_pos
-        ;; sp0_pos and sp1_ops respectively contain sprite0 and sprite1 positions
-
+;;; Position Sprites according to sp0_pos and sp1_pos
+;;; sp0_pos and sp1_ops respectively contain sprite0 and sprite1 positions
 sp0_pos = ptr1
 sp1_pos = ptr1 + 1
 ;;; Macro argument is 0 or 1, the sprite to position
 ;;; This consumes a display line
+;;; Uses A register
         MAC COARSE_POSITION_ONE_SPRITE
         ;; Clear sprites there to avoid wasting a scanline
         lda #$00
         sta GRP0
         sta GRP1
-        ;; Set carry for subsequent substrations
-        sec
 
-        ;; Coarse positioning
-        lda sp{1}_pos
+        sec
         ;; coarse loop consumes 15 pixels (3 * 5cycles)
+        lda sp{1}_pos
 .coarse_loop:
         sbc #$0f
         bcs .coarse_loop
@@ -56,10 +55,13 @@ sp1_pos = ptr1 + 1
         sta sp{1}_pos           ; Save remaining pixels for fine move
         ENDM
 
+;;; Fine position using sp0_pos or sp1_pos
+;;; Macro argument is 0 or 1, for positionning sprite 0 or sprite 1
+;;; Uses A register
         MAC FINE_POSITION_ONE_SPRITE
+        sec
         lda sp{1}_pos
         eor #$ff
-        sec
         sbc #$08
         REPEAT 4
         asl
@@ -92,28 +94,28 @@ text_kernel:	SUBROUTINE
         and #$0f                ; in [0  , 15]
         eor #$ff                ; in [-16, -1]
         adc #$0f                ; in [-1 , 14]
-        tax
         bmi .display_column
+        sec                     ; Though there's necessary a carry at this point
 .header_loop:
         sta WSYNC
-        dex
+        sbc #$01
         bpl .header_loop
 
 .display_column:
-        ldx #12
-        stx sprite_cnt
+        lda #12
+        sta sprite_cnt
 .column_loop:
         ;; Width is 144 pixels = 160 - 16 (2x8 borders)
         ;; First pixel for sp0_pos = #17
         ;; First out of screen pix for #161
-        ldx #17+36-4            ; Fetch sprite0 position
-        stx sp0_pos
-        ldx #17+3*36-4          ; Fetch sprite1 position
-        stx sp1_pos
+        lda #17+36-4            ; Fetch sprite0 position
+        sta sp0_pos
+        lda #17+3*36-4          ; Fetch sprite1 position
+        sta sp1_pos
         POSITION_BOTH_SPRITES
 
-        ldx #11
-        stx sprite_it
+        lda #11
+        sta sprite_it
 .sprite_loop:
         sta WSYNC
         ;; (1) Trick do reduce sprites vertical spacing
