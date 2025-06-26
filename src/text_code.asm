@@ -6,15 +6,16 @@
         sta sp1_ptr+1
 
         ;; Initializes font offets
-        clc
         ldy #11
         lda #0
 .font_offsets:
+        clc
         adc #$10
         sta font_off0,Y
+        clc
         adc #$10
         sta font_off1,Y
-        dex
+        dey
         bpl .font_offsets
         ENDM
 
@@ -128,9 +129,6 @@ text_overscan:  SUBROUTINE
         ENDM
 
 text_kernel:	SUBROUTINE
-        SET_POINTER sp0_ptr,sp0_table
-        SET_POINTER sp1_ptr,sp1_table
-
         ;; Header offset
         clc
         lda frame_cnt
@@ -147,19 +145,18 @@ text_kernel:	SUBROUTINE
         bpl .header_loop
 
 .display_column:
-        ldy #11
-        sty sprite_cnt
+        ldx #11                 ; Use X for sprite counter
 .column_loop:
         ;; Width is 144 pixels = 160 - 16 (2x8 borders)
         ;; First pixel for sp0_pos = #17
         ;; First out of screen pix for #161
-        lda pos_arr0,Y       ; Fetch sprite0 position - 8 is left edge
+        lda pos_arr0,X       ; Fetch sprite0 position - 8 is left edge
         sta sp0_pos
-        lda pos_arr1,Y    ; Fetch sprite1 position - 144 is right edge
+        lda pos_arr1,X    ; Fetch sprite1 position - 144 is right edge
         sta sp1_pos
 
 .sprite_header:
-        ldy #15
+        ldy #15                 ; Use Y for sprite line counter
         lda (bg_ptr),Y
         sta WSYNC
         sta COLUPF
@@ -176,9 +173,14 @@ text_kernel:	SUBROUTINE
         FINE_POSITION_ONE_SPRITE 0
         FINE_POSITION_ONE_SPRITE 1
 
-        ;; First sprites line needs to do HMOVE after WSYNC to commit
-        ;; sprite's fine position
         dey                     ; y is now #12
+        ;; First sprites line needs sp0_ptr and sp1_ptr to be set
+        lda font_off0,X
+        sta sp0_ptr
+        lda font_off1,X
+        sta sp1_ptr
+        ;; As weel as HMOVE performed after WSYNC to commit sprite's
+        ;; fine position
         sta WSYNC
         sta HMOVE
         SET_BG_N_SPRITES
@@ -190,9 +192,7 @@ text_kernel:	SUBROUTINE
         dey
         bpl .sprite_body
 
-        ldy sprite_cnt
-        dey
-        sty sprite_cnt
+        dex
         bmi .end
         jmp .column_loop
 .end:

@@ -1,8 +1,8 @@
 ;;; Pointer in the background table
 ;;; Used for the parallax effect in the background
 bg_ptr = ptr0
-sp0_ptr         ds.w    2
-sp1_ptr         ds.w    2
+sp0_ptr         ds.w    1
+sp1_ptr         ds.w    1
 
 sprite_cnt      ds.b    1     ; Counter to display 1 column of sprites
 sp0_pos         ds.b    1     ; storage for sprite 0 fine positionning
