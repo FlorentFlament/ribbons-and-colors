@@ -125,13 +125,10 @@ text_kernel:	SUBROUTINE
         FINE_POSITION_ONE_SPRITE 0
         FINE_POSITION_ONE_SPRITE 1
 
+        ;; First sprites line needs to do HMOVE after WSYNC to commit sprite's fine position
         dey                     ; y is now #12
-.sprite_body:
         sta WSYNC
-        ;; (1) Trick do reduce sprites vertical spacing
-        ;; by commiting horizontal moves while setting sprites pixels
         sta HMOVE
-
         lda (bg_ptr),Y
         sta COLUPF
         lda (sp0_ptr),Y
@@ -139,11 +136,16 @@ text_kernel:	SUBROUTINE
         lda (sp1_ptr),Y
         sta GRP1
 
-        ;; Don't move sprites further - Part of trick (1)
-        ;; Enough cycles need be consumed earlier
-        lda #$00
-        sta HMP0
-        sta HMP1
+        ;; Displaying remaining lines of sprites
+        dey
+.sprite_body:
+        sta WSYNC
+        lda (bg_ptr),Y
+        sta COLUPF
+        lda (sp0_ptr),Y
+        sta GRP0
+        lda (sp1_ptr),Y
+        sta GRP1
 
         dey
         bpl .sprite_body
@@ -162,6 +164,8 @@ text_kernel:	SUBROUTINE
         sta COLUPF
         rts
 
+;;; Doubling the table is a trick to be able to move start pointer in the table.
+;;; It saves the otherwise required "AND #$0f" instruction.
 bg_table:
         dc.b $90, $90, $92, $92, $94, $94, $96, $96
         dc.b $98, $98, $96, $96, $94, $94, $92, $92
