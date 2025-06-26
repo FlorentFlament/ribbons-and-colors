@@ -113,6 +113,9 @@ text_overscan:  SUBROUTINE
         ENDM
 
 text_kernel:	SUBROUTINE
+        SET_POINTER bg_ptr,bg_table
+        SET_POINTER sp0_ptr,sp0_table
+        SET_POINTER sp1_ptr,sp1_table
 
         ;; Header offset
         clc
@@ -141,18 +144,18 @@ text_kernel:	SUBROUTINE
         sta sp1_pos
         POSITION_BOTH_SPRITES
 
-        lda #12
-        sta sprite_it
+        ldy #12
 .sprite_loop:
         sta WSYNC
         ;; (1) Trick do reduce sprites vertical spacing
         ;; by commiting horizontal moves while setting sprites pixels
         sta HMOVE
 
-        SET_BACKGROUND_COLOR
-        lda #$ff                ; Fetch sprite0 data
+        lda (bg_ptr),Y
+        sta COLUPF
+        lda (sp0_ptr),Y
         sta GRP0
-        lda #$ff                ; Fetch sprite1 data
+        lda (sp1_ptr),Y
         sta GRP1
 
         ;; Don't move sprites further - Part of trick (1)
@@ -161,9 +164,7 @@ text_kernel:	SUBROUTINE
         sta HMP0
         sta HMP1
 
-        ldx sprite_it
-        dex
-        stx sprite_it
+        dey
         bpl .sprite_loop
 
         ldx sprite_cnt
@@ -180,3 +181,15 @@ text_kernel:	SUBROUTINE
         sta GRP1
         sta COLUPF
         rts
+
+bg_table:
+        dc.b $90, $92, $94, $96, $98, $96, $94, $92
+        dc.b $90, $92, $94, $96, $98, $96, $94, $92
+
+sp0_table:
+        dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
+        dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
+
+sp1_table:
+        dc.b $18, $3c, $7e, $ff, $ff, $7e, $3c, $18
+        dc.b $18, $3c, $7e, $ff, $ff, $7e, $3c, $18
