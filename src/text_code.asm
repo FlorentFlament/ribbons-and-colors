@@ -223,14 +223,24 @@ text_kernel:	SUBROUTINE
         bpl .sprite_body
 
         dex
-        bmi .end
+        bmi .end_column_loop
         jmp .column_loop
-.end:
+.end_column_loop:
 
+        ldy #$0f
+.footer_loop:
+        lda (bg_ptr),Y
         sta WSYNC
+        sta COLUPF
         lda #$00
         sta GRP0
         sta GRP1
+        dey
+        cpy hdr_height
+        bne .footer_loop
+
+        sta WSYNC
+        lda #$00
         sta COLUPF
         rts
 
