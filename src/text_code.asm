@@ -36,6 +36,31 @@
         bpl .pos_array
         ENDM
 
+;;; Rotate characters and positions
+        MAC ROTATE_ARRAY
+        ldy #(CHARACTERS_COUNT-2)
+.rotate_loop:
+        lda {1},Y
+        sta {1}+1,Y
+        dey
+        bpl .rotate_loop
+        ENDM
+
+;;; Round rotate characters and positions
+        MAC ROUND_ROTATE_ARRAY
+        ldx {1}+CHARACTERS_COUNT-1
+        ROTATE_ARRAY {1}
+        stx {1}
+        ENDM
+
+;;; Round rotate charactes and positions
+        MAC ROUND_ROTATE_CHARACTERS
+        ROUND_ROTATE_ARRAY font_off0
+        ROUND_ROTATE_ARRAY font_off1
+        ROUND_ROTATE_ARRAY pos_arr0
+        ROUND_ROTATE_ARRAY pos_arr1
+        ENDM
+
 ;;; Uses A register
 text_init:	SUBROUTINE
         INCLUDE "bossa-novayaska_init.asm"
@@ -80,6 +105,17 @@ text_vblank:	SUBROUTINE
         adc #$00
         sta bg_ptr+1
 
+        ;; Compute header height
+        clc
+        lda frame_cnt
+        and #$0f                ; in [0  , 15]
+        eor #$ff                ; in [-16, -1]
+        adc #$0f                ; in [-1 , 14]
+        sta hdr_height
+        cmp #14                 ; Rotate when value is maximal
+        bne .skip_rotate
+        ROUND_ROTATE_CHARACTERS
+.skip_rotate:
 	rts
 
 text_overscan:  SUBROUTINE
@@ -129,15 +165,8 @@ text_overscan:  SUBROUTINE
         ENDM
 
 text_kernel:	SUBROUTINE
-        ;; Header offset
-        clc
-        lda frame_cnt
-        and #$0f                ; in [0  , 15]
-        eor #$ff                ; in [-16, -1]
-        adc #$0f                ; in [-1 , 14]
-        sta WSYNC               ; Ensure header instructions timing
+        ldy hdr_height
         bmi .display_column
-        tay
 .header_loop:
         lda (bg_ptr),Y
         sta WSYNC
