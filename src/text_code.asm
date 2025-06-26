@@ -135,6 +135,7 @@ text_kernel:	SUBROUTINE
         and #$0f                ; in [0  , 15]
         eor #$ff                ; in [-16, -1]
         adc #$0f                ; in [-1 , 14]
+        sta WSYNC               ; Ensure header instructions timing
         bmi .display_column
         tay
 .header_loop:
