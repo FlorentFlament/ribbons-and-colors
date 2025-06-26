@@ -76,6 +76,15 @@ text_overscan:  SUBROUTINE
         sta HMP{1}
         ENDM
 
+        MAC SET_BG_N_SPRITES
+        lda (bg_ptr),Y
+        sta COLUPF
+        lda (sp0_ptr),Y
+        sta GRP0
+        lda (sp1_ptr),Y
+        sta GRP1
+        ENDM
+
 text_kernel:	SUBROUTINE
         SET_POINTER sp0_ptr,sp0_table
         SET_POINTER sp1_ptr,sp1_table
@@ -129,24 +138,12 @@ text_kernel:	SUBROUTINE
         dey                     ; y is now #12
         sta WSYNC
         sta HMOVE
-        lda (bg_ptr),Y
-        sta COLUPF
-        lda (sp0_ptr),Y
-        sta GRP0
-        lda (sp1_ptr),Y
-        sta GRP1
-
+        SET_BG_N_SPRITES
         ;; Displaying remaining lines of sprites
         dey
 .sprite_body:
         sta WSYNC
-        lda (bg_ptr),Y
-        sta COLUPF
-        lda (sp0_ptr),Y
-        sta GRP0
-        lda (sp1_ptr),Y
-        sta GRP1
-
+        SET_BG_N_SPRITES
         dey
         bpl .sprite_body
 
