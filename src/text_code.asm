@@ -196,9 +196,9 @@ text_kernel:	SUBROUTINE
         sta WSYNC
         sta COLUPF
         COARSE_POSITION_ONE_SPRITE 1
+        sta WSYNC               ; Maximise possible right position
         dey
         lda (bg_ptr),Y
-        sta WSYNC
         sta COLUPF
         FINE_POSITION_ONE_SPRITE 0
         FINE_POSITION_ONE_SPRITE 1
