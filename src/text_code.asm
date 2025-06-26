@@ -26,22 +26,16 @@ text_init:	SUBROUTINE
 text_vblank:	SUBROUTINE
         jsr tia_player          ; Play the music
 
-        ;; Compute line_cnt offset from frame counter
-        ;lda frame_cnt
-        ;sta line_cnt
-        ;lda frame_cnt+1
-        ;ror
-        ;tax
-        ;lda line_cnt
-        ;ror
-        ;sta line_cnt
-        ;txa
-        ;ror
-        ;lda line_cnt
-        ;ror
-        ;sta line_cnt
-        ;eor #$ff
-        ;sta line_cnt
+        SET_POINTER bg_ptr,bg_table
+        clc
+        lda frame_cnt
+        lsr
+        and #$0f
+        adc bg_ptr
+        sta bg_ptr
+        lda bg_ptr+1
+        adc #$00
+        sta bg_ptr+1
 
 	rts
 
@@ -83,7 +77,6 @@ text_overscan:  SUBROUTINE
         ENDM
 
 text_kernel:	SUBROUTINE
-        SET_POINTER bg_ptr,bg_table
         SET_POINTER sp0_ptr,sp0_table
         SET_POINTER sp1_ptr,sp1_table
 
@@ -170,6 +163,8 @@ text_kernel:	SUBROUTINE
         rts
 
 bg_table:
+        dc.b $90, $90, $92, $92, $94, $94, $96, $96
+        dc.b $98, $98, $96, $96, $94, $94, $92, $92
         dc.b $90, $90, $92, $92, $94, $94, $96, $96
         dc.b $98, $98, $96, $96, $94, $94, $92, $92
 
