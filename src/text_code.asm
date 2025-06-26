@@ -113,7 +113,7 @@ text_kernel:	SUBROUTINE
         ;; First out of screen pix for #161
         lda #40              ; Fetch sprite0 position - 8 is left edge
         sta sp0_pos
-        lda #112          ; Fetch sprite1 position - 144 is right edge
+        lda #112             ; Fetch sprite1 position - 144 is right edge
         sta sp1_pos
 
 .sprite_header:
