@@ -27,21 +27,21 @@ text_vblank:	SUBROUTINE
         jsr tia_player          ; Play the music
 
         ;; Compute line_cnt offset from frame counter
-        lda frame_cnt
-        sta line_cnt
-        lda frame_cnt+1
-        ror
-        tax
-        lda line_cnt
-        ror
-        sta line_cnt
-        txa
-        ror
-        lda line_cnt
-        ror
-        sta line_cnt
-        eor #$ff
-        sta line_cnt
+        ;lda frame_cnt
+        ;sta line_cnt
+        ;lda frame_cnt+1
+        ;ror
+        ;tax
+        ;lda line_cnt
+        ;ror
+        ;sta line_cnt
+        ;txa
+        ;ror
+        ;lda line_cnt
+        ;ror
+        ;sta line_cnt
+        ;eor #$ff
+        ;sta line_cnt
 
 	rts
 
@@ -58,7 +58,6 @@ text_overscan:  SUBROUTINE
         lda #$00
         sta GRP0
         sta GRP1
-
         sec
         ;; coarse loop consumes 15 pixels (3 * 5cycles)
         lda sp{1}_pos
@@ -83,35 +82,6 @@ text_overscan:  SUBROUTINE
         sta HMP{1}
         ENDM
 
-;;; Position the 2 VCS sprites
-;;; sp0_pos and sp1_pos contain their respective positions
-;;; Consumes 2 display lines
-;;; WSYNC and HMOVE need to be performed after that
-        MAC POSITION_BOTH_SPRITES
-        ;; Coarse positioning
-        ldx line_cnt            ; Use time after setting sprites to perform computation
-        stx WSYNC
-        stx COLUPF
-        inx
-        stx line_cnt
-        COARSE_POSITION_ONE_SPRITE 0
-        sta WSYNC
-        SET_BACKGROUND_COLOR
-        COARSE_POSITION_ONE_SPRITE 1
-        ;; Fine sprites position
-        sta WSYNC
-        SET_BACKGROUND_COLOR
-        FINE_POSITION_ONE_SPRITE 0
-        FINE_POSITION_ONE_SPRITE 1
-        ENDM
-
-;;; Uses A and Y registers
-        MAC SET_BACKGROUND_COLOR
-        lda line_cnt
-        sta COLUPF
-        inc line_cnt
-        ENDM
-
 text_kernel:	SUBROUTINE
         SET_POINTER bg_ptr,bg_table
         SET_POINTER sp0_ptr,sp0_table
@@ -124,28 +94,46 @@ text_kernel:	SUBROUTINE
         eor #$ff                ; in [-16, -1]
         adc #$0f                ; in [-1 , 14]
         bmi .display_column
-        tax
+        tay
 .header_loop:
+        lda (bg_ptr),Y
         sta WSYNC
-        SET_BACKGROUND_COLOR
-        dex
+        sta COLUPF
+        dey
         bpl .header_loop
 
 .display_column:
-        lda #12
+        lda #11
         sta sprite_cnt
 .column_loop:
         ;; Width is 144 pixels = 160 - 16 (2x8 borders)
         ;; First pixel for sp0_pos = #17
         ;; First out of screen pix for #161
-        lda #0                 ; Fetch sprite0 position
+        lda #40              ; Fetch sprite0 position - 8 is left edge
         sta sp0_pos
-        lda #113                 ; Fetch sprite1 position
+        lda #112          ; Fetch sprite1 position - 144 is right edge
         sta sp1_pos
-        POSITION_BOTH_SPRITES
 
-        ldy #12
-.sprite_loop:
+.sprite_header:
+        ldy #15
+        lda (bg_ptr),Y
+        sta WSYNC
+        sta COLUPF
+        COARSE_POSITION_ONE_SPRITE 0
+        dey
+        lda (bg_ptr),Y
+        sta WSYNC
+        sta COLUPF
+        COARSE_POSITION_ONE_SPRITE 1
+        dey
+        lda (bg_ptr),Y
+        sta WSYNC
+        sta COLUPF
+        FINE_POSITION_ONE_SPRITE 0
+        FINE_POSITION_ONE_SPRITE 1
+
+        dey                     ; y is now #12
+.sprite_body:
         sta WSYNC
         ;; (1) Trick do reduce sprites vertical spacing
         ;; by commiting horizontal moves while setting sprites pixels
@@ -165,7 +153,7 @@ text_kernel:	SUBROUTINE
         sta HMP1
 
         dey
-        bpl .sprite_loop
+        bpl .sprite_body
 
         ldx sprite_cnt
         dex
@@ -173,7 +161,6 @@ text_kernel:	SUBROUTINE
         bmi .end
         jmp .column_loop
 .end:
-
 
         sta WSYNC
         lda #$00
@@ -183,8 +170,8 @@ text_kernel:	SUBROUTINE
         rts
 
 bg_table:
-        dc.b $90, $92, $94, $96, $98, $96, $94, $92
-        dc.b $90, $92, $94, $96, $98, $96, $94, $92
+        dc.b $90, $90, $92, $92, $94, $94, $96, $96
+        dc.b $98, $98, $96, $96, $94, $94, $92, $92
 
 sp0_table:
         dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
