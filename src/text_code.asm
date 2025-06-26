@@ -1,3 +1,40 @@
+;;; Initializes fonts pointers and array
+        MAC INIT_FONTS
+        ;; Initialize hi byte of sp0_ptr and sp1_ptr
+        lda #>text_font
+        sta sp0_ptr+1
+        sta sp1_ptr+1
+
+        ;; Initializes font offets
+        clc
+        ldy #11
+        lda #0
+.font_offsets:
+        adc #$10
+        sta font_off0,Y
+        adc #$10
+        sta font_off1,Y
+        dex
+        bpl .font_offsets
+        ENDM
+
+;;; Initialize sprite positions
+        MAC INIT_SPRITES_POSITIONS
+        ldy #11
+.pos_array:
+        clc
+        tya
+        adc #30
+        sta pos_arr0,Y
+        clc
+        tya
+        eor #$ff
+        adc #122
+        sta pos_arr1,Y
+        dey
+        bpl .pos_array
+        ENDM
+
 ;;; Uses A register
 text_init:	SUBROUTINE
         INCLUDE "bossa-novayaska_init.asm"
@@ -21,11 +58,16 @@ text_init:	SUBROUTINE
         lda #$ff
         sta COLUP0
         sta COLUP1
+
+        ;; Initialize font offsets
+        INIT_FONTS
+        INIT_SPRITES_POSITIONS
 	rts
 
 text_vblank:	SUBROUTINE
         jsr tia_player          ; Play the music
 
+        ;; Set background pointer for parallax effect
         SET_POINTER bg_ptr,bg_table
         clc
         lda frame_cnt
@@ -105,15 +147,15 @@ text_kernel:	SUBROUTINE
         bpl .header_loop
 
 .display_column:
-        lda #11
-        sta sprite_cnt
+        ldy #11
+        sty sprite_cnt
 .column_loop:
         ;; Width is 144 pixels = 160 - 16 (2x8 borders)
         ;; First pixel for sp0_pos = #17
         ;; First out of screen pix for #161
-        lda #40              ; Fetch sprite0 position - 8 is left edge
+        lda pos_arr0,Y       ; Fetch sprite0 position - 8 is left edge
         sta sp0_pos
-        lda #112             ; Fetch sprite1 position - 144 is right edge
+        lda pos_arr1,Y    ; Fetch sprite1 position - 144 is right edge
         sta sp1_pos
 
 .sprite_header:
@@ -134,7 +176,8 @@ text_kernel:	SUBROUTINE
         FINE_POSITION_ONE_SPRITE 0
         FINE_POSITION_ONE_SPRITE 1
 
-        ;; First sprites line needs to do HMOVE after WSYNC to commit sprite's fine position
+        ;; First sprites line needs to do HMOVE after WSYNC to commit
+        ;; sprite's fine position
         dey                     ; y is now #12
         sta WSYNC
         sta HMOVE
@@ -147,9 +190,9 @@ text_kernel:	SUBROUTINE
         dey
         bpl .sprite_body
 
-        ldx sprite_cnt
-        dex
-        stx sprite_cnt
+        ldy sprite_cnt
+        dey
+        sty sprite_cnt
         bmi .end
         jmp .column_loop
 .end:
@@ -161,8 +204,9 @@ text_kernel:	SUBROUTINE
         sta COLUPF
         rts
 
-;;; Doubling the table is a trick to be able to move start pointer in the table.
-;;; It saves the otherwise required "AND #$0f" instruction.
+;;; Doubling the table is a trick to be able to move start pointer in
+;;; the table.  It saves the otherwise required "AND #$0f"
+;;; instruction.
 bg_table:
         dc.b $90, $90, $92, $92, $94, $94, $96, $96
         dc.b $98, $98, $96, $96, $94, $94, $92, $92
