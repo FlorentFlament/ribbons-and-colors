@@ -25,6 +25,24 @@ text_init:	SUBROUTINE
 
 text_vblank:	SUBROUTINE
         jsr tia_player          ; Play the music
+
+        ;; Compute line_cnt offset from frame counter
+        lda frame_cnt
+        sta line_cnt
+        lda frame_cnt+1
+        ror
+        tax
+        lda line_cnt
+        ror
+        sta line_cnt
+        txa
+        ror
+        lda line_cnt
+        ror
+        sta line_cnt
+        eor #$ff
+        sta line_cnt
+
 	rts
 
 text_overscan:  SUBROUTINE
@@ -95,21 +113,6 @@ text_overscan:  SUBROUTINE
         ENDM
 
 text_kernel:	SUBROUTINE
-        lda frame_cnt
-        sta line_cnt
-        lda frame_cnt+1
-        ror
-        tax
-        lda line_cnt
-        ror
-        sta line_cnt
-        txa
-        ror
-        lda line_cnt
-        ror
-        sta line_cnt
-        eor #$ff
-        sta line_cnt
 
         ;; Header offset
         clc
