@@ -1,20 +1,27 @@
 ;;; Initializes fonts pointers and array
-        MAC INIT_FONTS
+;;; Requires the text number 0 or 1
+        MAC INIT_FONT_POINTERS
         ;; Initialize hi byte of sp0_ptr and sp1_ptr
         lda #>text_font
-        sta sp0_ptr+1
-        sta sp1_ptr+1
+        sta sp{1}_ptr+1
 
         ;; Initializes font pointers
+        ;; Uses reg A, X, Y and ptr0
+cur_char = ptr0
         ldy #(CHARACTERS_COUNT-1)
-        lda #0
 .font_pointers:
+        lda text{1},Y
+        REPEAT 3
+        asl
+        REPEND
+        sta cur_char
+        tya
+        eor #$ff
         clc
-        adc #$08
-        sta font_ptr0,Y
-        clc
-        adc #$08
-        sta font_ptr1,Y
+        adc #CHARACTERS_COUNT
+        tax
+        lda cur_char
+        sta font_ptr{1},X
         dey
         bpl .font_pointers
         ENDM
@@ -86,7 +93,8 @@ text_init:	SUBROUTINE
         sta COLUP1
 
         ;; Initialize font offsets
-        INIT_FONTS
+        INIT_FONT_POINTERS 0
+        INIT_FONT_POINTERS 1
         INIT_SPRITES_POSITIONS
 
         ; Start with max height without replacing character
