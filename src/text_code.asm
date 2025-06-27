@@ -267,12 +267,11 @@ sp1_pos = ptr1
         rts
 
 ;;; Doubling the table is a trick to be able to move start pointer in
-;;; the table.  It saves the otherwise required "AND #$0f"
-;;; instruction.
+;;; the table; and then use Y to access elements.
 bg_table:
-        dc.b $90, $90, $92, $92, $94, $94, $96, $94
-        dc.b $94, $92, $92, $90, $90, $92, $92, $94
-        dc.b $94, $96, $94, $94, $92, $92
+        dc.b $90, $92, $92, $94, $94, $96, $96, $94
+        dc.b $94, $92, $92, $90, $92, $92, $94, $94
+        dc.b $96, $96, $94, $94, $92, $92
 
 sp0_table:
         dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
