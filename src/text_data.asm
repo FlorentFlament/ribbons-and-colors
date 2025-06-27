@@ -1,6 +1,4 @@
 text:
-        dc.b "            "
-        dc.b "            "
         dc.b "LIKE A CANDY"
         dc.b "            "
         dc.b "   FLUSH    "

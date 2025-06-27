@@ -5,18 +5,18 @@
         sta sp0_ptr+1
         sta sp1_ptr+1
 
-        ;; Initializes font offets
+        ;; Initializes font pointers
         ldy #(CHARACTERS_COUNT-1)
         lda #0
-.font_offsets:
+.font_pointers:
         clc
-        adc #$10
-        sta font_off0,Y
+        adc #$08
+        sta font_ptr0,Y
         clc
-        adc #$10
-        sta font_off1,Y
+        adc #$08
+        sta font_ptr1,Y
         dey
-        bpl .font_offsets
+        bpl .font_pointers
         ENDM
 
 ;;; Initialize sprite positions
@@ -55,8 +55,8 @@
 
 ;;; Round rotate charactes and positions
         MAC ROUND_ROTATE_CHARACTERS
-        ROUND_ROTATE_ARRAY font_off0
-        ROUND_ROTATE_ARRAY font_off1
+        ROUND_ROTATE_ARRAY font_ptr0
+        ROUND_ROTATE_ARRAY font_ptr1
         ROUND_ROTATE_ARRAY pos_arr0
         ROUND_ROTATE_ARRAY pos_arr1
         ENDM
@@ -88,6 +88,10 @@ text_init:	SUBROUTINE
         ;; Initialize font offsets
         INIT_FONTS
         INIT_SPRITES_POSITIONS
+
+        ; Start with max height without replacing character
+        lda #(TOTAL_SPRITE_HEIGHT-1)
+        sta hdr_height
 	rts
 
 text_vblank:	SUBROUTINE
@@ -105,16 +109,11 @@ text_vblank:	SUBROUTINE
         adc #$00
         sta bg_ptr+1
 
-        ;; Compute header height
-        clc
-        lda frame_cnt
-        and #$0f                ; in [0  , 15]
-        eor #$ff                ; in [-16, -1]
-        adc #$0f                ; in [-1 , 14]
-        sta hdr_height
-        cmp #14                 ; Rotate when value is maximal
-        bne .skip_rotate
+        dec hdr_height
+        bpl .skip_rotate
         ROUND_ROTATE_CHARACTERS
+        lda #(TOTAL_SPRITE_HEIGHT-1)
+        sta hdr_height
 .skip_rotate:
 	rts
 
@@ -166,15 +165,16 @@ text_overscan:  SUBROUTINE
 
 text_kernel:	SUBROUTINE
         ldy hdr_height
-        bmi .display_column
+        dey
+        bmi .skip_header
 .header_loop:
         lda (bg_ptr),Y
         sta WSYNC
         sta COLUPF
         dey
         bpl .header_loop
+.skip_header:
 
-.display_column:
         ;; PAL picture is 228 pixel high
         ;; Displaying 13 characters -> 208 pixels + 16 padding = 224 pixels
         ldx #12                 ; Use X for sprite counter
@@ -188,7 +188,7 @@ text_kernel:	SUBROUTINE
         sta sp1_pos
 
 .sprite_header:
-        ldy #15                 ; Use Y for sprite line counter
+        ldy #10                 ; 11 lines (8 chars + 3 positionning)
         lda (bg_ptr),Y
         sta WSYNC
         sta COLUPF
@@ -207,9 +207,9 @@ text_kernel:	SUBROUTINE
 
         dey                     ; y is now #12
         ;; First sprites line needs sp0_ptr and sp1_ptr to be set
-        lda font_off0,X
+        lda font_ptr0,X
         sta sp0_ptr
-        lda font_off1,X
+        lda font_ptr1,X
         sta sp1_ptr
         ;; As weel as HMOVE performed after WSYNC to commit sprite's
         ;; fine position
@@ -229,7 +229,9 @@ text_kernel:	SUBROUTINE
         jmp .column_loop
 .end_column_loop:
 
-        ldy #$0f
+        ldy #(TOTAL_SPRITE_HEIGHT-1)
+        cpy hdr_height
+        beq .skip_footer
 .footer_loop:
         lda (bg_ptr),Y
         sta WSYNC
@@ -240,9 +242,12 @@ text_kernel:	SUBROUTINE
         dey
         cpy hdr_height
         bne .footer_loop
+.skip_footer:
 
         sta WSYNC
         lda #$00
+        sta GRP0
+        sta GRP1
         sta COLUPF
         rts
 
@@ -250,10 +255,10 @@ text_kernel:	SUBROUTINE
 ;;; the table.  It saves the otherwise required "AND #$0f"
 ;;; instruction.
 bg_table:
-        dc.b $90, $90, $92, $92, $94, $94, $96, $96
-        dc.b $98, $98, $96, $96, $94, $94, $92, $92
-        dc.b $90, $90, $92, $92, $94, $94, $96, $96
-        dc.b $98, $98, $96, $96, $94, $94, $92, $92
+        dc.b $90, $90, $92, $92, $94, $96, $96, $94
+        dc.b $94, $92, $92, $90, $90, $92, $92, $94
+        dc.b $96, $96, $94, $96, $92, $92, $90, $90
+        dc.b $92, $92, $94, $96, $96, $94, $94, $92
 
 sp0_table:
         dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
