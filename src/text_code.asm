@@ -92,23 +92,33 @@ text_init:	SUBROUTINE
         ; Start with max height without replacing character
         lda #(TOTAL_SPRITE_HEIGHT-1)
         sta hdr_height
+        sta bg_offset
 	rts
 
 text_vblank:	SUBROUTINE
         jsr tia_player          ; Play the music
 
-        ;; Set background pointer for parallax effect
-        SET_POINTER bg_ptr,bg_table
-        clc
-        lda frame_cnt
-        lsr
-        and #$0f
-        adc bg_ptr
+        ;; Compte bg_ptr from bg_table + bg_offset
+        sec
+        lda #(TOTAL_SPRITE_HEIGHT-1)
+        sbc bg_offset
+        adc #<bg_table
         sta bg_ptr
-        lda bg_ptr+1
+        lda #>bg_table
         adc #$00
         sta bg_ptr+1
 
+        ;; Update bg_offset as required
+        lda frame_cnt
+        and #$01
+        beq .end_bg_offset
+        dec bg_offset
+        bpl .end_bg_offset
+        lda #(TOTAL_SPRITE_HEIGHT-1)
+        sta bg_offset
+.end_bg_offset
+
+        ;; Update hdr_height and rotate characters as required
         dec hdr_height
         bpl .skip_rotate
         ROUND_ROTATE_CHARACTERS
@@ -175,10 +185,13 @@ text_kernel:	SUBROUTINE
         bpl .header_loop
 .skip_header:
 
-        ;; PAL picture is 228 pixel high
-        ;; Displaying 13 characters -> 208 pixels + 16 padding = 224 pixels
-        ldx #12                 ; Use X for sprite counter
+        ;; PAL picture is 228 pixel high Displaying 19 characters ->
+        ;; 209 pixels + 11 padding = 220 pixels
+        ldx #(CHARACTERS_COUNT-1) ; Use X for sprite counter
 .column_loop:
+;;; sp0_pos and sp1_pos ar used in header to position sprites
+sp0_pos = ptr0
+sp1_pos = ptr1
         ;; Width is 144 pixels = 160 - 16 (2x8 borders)
         ;; First pixel for sp0_pos = #17
         ;; First out of screen pix for #161
@@ -186,8 +199,8 @@ text_kernel:	SUBROUTINE
         sta sp0_pos
         lda pos_arr1,X    ; Fetch sprite1 position - 144 is right edge
         sta sp1_pos
-
 .sprite_header:
+        ;; Y contains the line number from 10 to 0
         ldy #10                 ; 11 lines (8 chars + 3 positionning)
         lda (bg_ptr),Y
         sta WSYNC
@@ -204,15 +217,17 @@ text_kernel:	SUBROUTINE
         sta COLUPF
         FINE_POSITION_ONE_SPRITE 0
         FINE_POSITION_ONE_SPRITE 1
+;;; End of sp0_pos and sp1_pos usage
 
-        dey                     ; y is now #12
         ;; First sprites line needs sp0_ptr and sp1_ptr to be set
         lda font_ptr0,X
         sta sp0_ptr
         lda font_ptr1,X
         sta sp1_ptr
-        ;; As weel as HMOVE performed after WSYNC to commit sprite's
-        ;; fine position
+
+        dey                     ; y is now #12
+        ;; Perform HMOVE after WSYNC to commit sprite's fine position
+        ;; while drawing the first character line.
         sta WSYNC
         sta HMOVE
         SET_BG_N_SPRITES
@@ -255,10 +270,9 @@ text_kernel:	SUBROUTINE
 ;;; the table.  It saves the otherwise required "AND #$0f"
 ;;; instruction.
 bg_table:
-        dc.b $90, $90, $92, $92, $94, $96, $96, $94
+        dc.b $90, $90, $92, $92, $94, $94, $96, $94
         dc.b $94, $92, $92, $90, $90, $92, $92, $94
-        dc.b $96, $96, $94, $96, $92, $92, $90, $90
-        dc.b $92, $92, $94, $96, $96, $94, $94, $92
+        dc.b $94, $96, $94, $94, $92, $92
 
 sp0_table:
         dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
