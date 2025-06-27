@@ -29,15 +29,14 @@ CODE_START equ *
 init:   CLEAN_START		; Initializes Registers & Memory
         jsr main_init
 
-main_loop:	SUBROUTINE
-	VERTICAL_SYNC		; 4 scanlines Vertical Sync signal
-
     MAC WAIT_TIMINT
 .wait_timint
 	lda TIMINT
 	beq .wait_timint
-        sta WSYNC
     ENDM
+
+main_loop:	SUBROUTINE
+	VERTICAL_SYNC		; 4 scanlines Vertical Sync signal
 
 .vblank:
 ;;; 48 vblank scanlines
@@ -45,17 +44,19 @@ main_loop:	SUBROUTINE
 	sta TIM64T
         jsr main_vblank
 	WAIT_TIMINT
+        sta WSYNC               ; Resynchronize
 
 .kernel:
-;;; 212 kernal scanlines
-	lda #251
-	sta TIM64T
+;;; 230 kernal scanlines (PAL standard is 228)
+	lda #17
+	sta T1024T
         jsr main_kernel
 	WAIT_TIMINT
+        sta WSYNC
 
 .overscan:
-;;; 48+4 overscan scanlines (+ vertical sync)
-	lda #56
+;;; 30+4 overscan scanlines (+ vertical sync)
+	lda #36
 	sta TIM64T
         jsr main_overscan
 	WAIT_TIMINT
