@@ -6,7 +6,7 @@
         sta sp1_ptr+1
 
         ;; Initializes font offets
-        ldy #11
+        ldy #(CHARACTERS_COUNT-1)
         lda #0
 .font_offsets:
         clc
@@ -21,7 +21,7 @@
 
 ;;; Initialize sprite positions
         MAC INIT_SPRITES_POSITIONS
-        ldy #11
+        ldy #(CHARACTERS_COUNT-1)
 .pos_array:
         clc
         tya
@@ -175,7 +175,9 @@ text_kernel:	SUBROUTINE
         bpl .header_loop
 
 .display_column:
-        ldx #11                 ; Use X for sprite counter
+        ;; PAL picture is 228 pixel high
+        ;; Displaying 13 characters -> 208 pixels + 16 padding = 224 pixels
+        ldx #12                 ; Use X for sprite counter
 .column_loop:
         ;; Width is 144 pixels = 160 - 16 (2x8 borders)
         ;; First pixel for sp0_pos = #17
