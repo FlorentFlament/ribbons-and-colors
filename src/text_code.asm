@@ -1,15 +1,25 @@
 ;;; Initialize sprite positions
-    MAC INIT_SPRITES_POSITIONS
+;;; Uses ptr0
+    MAC UPDATE_SPRITES_POSITIONS
+        lda frame_cnt
+        sta ptr0
         ldy #(CHARACTERS_COUNT-1)
 .pos_array:
-        clc
         tya
+        sec
+        sbc div_11
+        REPEAT 3
+        asl
+        REPEND
+        clc
+        adc ptr0
+        tax
+        lda sine_table,X
+        clc
         adc #30
         sta pos_arr0,Y
         clc
-        tya
-        eor #$ff
-        adc #122
+        adc #60
         sta pos_arr1,Y
         dey
         bpl .pos_array
@@ -47,8 +57,6 @@ text_init:	SUBROUTINE
         lda #>text_font
         sta sp0_ptr+1
         sta sp1_ptr+1
-
-        INIT_SPRITES_POSITIONS
 
         ;; 11 (TOTAL_SPRITE_HEIGHT) related counters
         lda #(TOTAL_SPRITE_HEIGHT-1)
@@ -148,6 +156,8 @@ text_vblank:	SUBROUTINE
         bne .skip_rotate
         UPDATE_CHARACTERS
 .skip_rotate:
+
+        UPDATE_SPRITES_POSITIONS
 	rts
 
 text_overscan:  SUBROUTINE
@@ -341,3 +351,37 @@ border_colors:
         dc.b $26, $26, $26, $26, $28, $28, $28, $28
         dc.b $2a, $2a, $2a, $2a, $2c, $2c, $2c, $2e
         dc.b $2e, $2e
+
+sine_table:
+	dc.b $10, $10, $10, $11, $11, $11, $12, $12
+	dc.b $13, $13, $13, $14, $14, $15, $15, $15
+	dc.b $16, $16, $16, $17, $17, $17, $18, $18
+	dc.b $18, $19, $19, $19, $1a, $1a, $1a, $1b
+	dc.b $1b, $1b, $1b, $1c, $1c, $1c, $1c, $1d
+	dc.b $1d, $1d, $1d, $1d, $1e, $1e, $1e, $1e
+	dc.b $1e, $1e, $1f, $1f, $1f, $1f, $1f, $1f
+	dc.b $1f, $1f, $1f, $1f, $1f, $1f, $1f, $1f
+	dc.b $20, $1f, $1f, $1f, $1f, $1f, $1f, $1f
+	dc.b $1f, $1f, $1f, $1f, $1f, $1f, $1f, $1e
+	dc.b $1e, $1e, $1e, $1e, $1e, $1d, $1d, $1d
+	dc.b $1d, $1d, $1c, $1c, $1c, $1c, $1b, $1b
+	dc.b $1b, $1b, $1a, $1a, $1a, $19, $19, $19
+	dc.b $18, $18, $18, $17, $17, $17, $16, $16
+	dc.b $16, $15, $15, $15, $14, $14, $13, $13
+	dc.b $13, $12, $12, $11, $11, $11, $10, $10
+	dc.b $10, $0f, $0f, $0e, $0e, $0e, $0d, $0d
+	dc.b $0c, $0c, $0c, $0b, $0b, $0a, $0a, $0a
+	dc.b $09, $09, $09, $08, $08, $08, $07, $07
+	dc.b $07, $06, $06, $06, $05, $05, $05, $04
+	dc.b $04, $04, $04, $03, $03, $03, $03, $02
+	dc.b $02, $02, $02, $02, $01, $01, $01, $01
+	dc.b $01, $01, $00, $00, $00, $00, $00, $00
+	dc.b $00, $00, $00, $00, $00, $00, $00, $00
+	dc.b $00, $00, $00, $00, $00, $00, $00, $00
+	dc.b $00, $00, $00, $00, $00, $00, $00, $01
+	dc.b $01, $01, $01, $01, $01, $02, $02, $02
+	dc.b $02, $02, $03, $03, $03, $03, $04, $04
+	dc.b $04, $04, $05, $05, $05, $06, $06, $06
+	dc.b $07, $07, $07, $08, $08, $08, $09, $09
+	dc.b $09, $0a, $0a, $0a, $0b, $0b, $0c, $0c
+	dc.b $0c, $0d, $0d, $0e, $0e, $0e, $0f, $0f
