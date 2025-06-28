@@ -1,11 +1,10 @@
 text_data0:
         dc.b "Hello folks, usual suspects for an unusual platform."
         dc.b " Today, we've got a guest. LLama 3.1 8B is telling us about its life."
-        dc.b 0
         dc.b " Apart from that the sun is shining, temperatures are rising, bombs are falling, technology is threatening, america's collapsing, real estate's declining, and stock market is soaring."
-        dc.b " There's only so much things one can do."
-        dc.b " We've got to operate within our range of influence."
-        dc.b " And today, you're gonna experience an eye test on the Atari 2600."
+        dc.b " There's only so much one can do."
+        dc.b " We've got to operate within our range."
+        dc.b " And today, you're gonna experience an eye test on the Atari VCS."
         dc.b " If you can read this text, you're an alien."
         dc.b 0
 
