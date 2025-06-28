@@ -181,7 +181,29 @@ text_overscan:  SUBROUTINE
         sta GRP1
         ENDM
 
+    MAC DRAW_BORDER
+        ldy #(BORDER_HEIGHT-1)
+.border_loop:
+        sta WSYNC
+        lda border_colors,Y
+        sta COLUPF
+        lda #$ff
+        sta PF0
+        sta PF1
+        sta PF2
+        dey
+        bpl .border_loop
+    ENDM
+
 text_kernel:	SUBROUTINE
+        DRAW_BORDER
+
+        ;; Remove left and right most playfield to avoid hmove
+        ;; artefacts
+        lda #$cf
+        sta PF0
+
+;;; Drawing variable height header - to create movement
         ldy hdr_height
         dey
         bmi .skip_header
@@ -267,10 +289,17 @@ sp1_pos = ptr1
         bne .footer_loop
 .skip_footer:
 
+        ;; Clear Sprites
         sta WSYNC
         lda #$00
         sta GRP0
         sta GRP1
+
+        DRAW_BORDER
+
+        ;; Clear payfield
+        sta WSYNC
+        lda #$00
         sta COLUPF
         rts
 
@@ -280,6 +309,12 @@ bg_table:
         dc.b $90, $92, $92, $94, $94, $96, $96, $94
         dc.b $94, $92, $92, $90, $92, $92, $94, $94
         dc.b $96, $96, $94, $94, $92, $92
+
+border_colors:
+        dc.b $22, $22, $22, $22, $24, $24, $24, $24
+        dc.b $26, $26, $26, $26, $28, $28, $28, $28
+        dc.b $2a, $2a, $2a, $2a, $2c, $2c, $2c, $2e
+        dc.b $2e, $2e
 
 sp0_table:
         dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
