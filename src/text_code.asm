@@ -1,33 +1,5 @@
-;;; Initializes fonts pointers and array
-;;; Requires the text number 0 or 1
-        MAC INIT_FONT_POINTERS
-        ;; Initialize hi byte of sp0_ptr and sp1_ptr
-        lda #>text_font
-        sta sp{1}_ptr+1
-
-        ;; Initializes font pointers
-        ;; Uses reg A, X, Y and ptr0
-cur_char = ptr0
-        ldy #(CHARACTERS_COUNT-1)
-.font_pointers:
-        lda text{1},Y
-        REPEAT 3
-        asl
-        REPEND
-        sta cur_char
-        tya
-        eor #$ff
-        clc
-        adc #CHARACTERS_COUNT
-        tax
-        lda cur_char
-        sta font_ptr{1},X
-        dey
-        bpl .font_pointers
-        ENDM
-
 ;;; Initialize sprite positions
-        MAC INIT_SPRITES_POSITIONS
+    MAC INIT_SPRITES_POSITIONS
         ldy #(CHARACTERS_COUNT-1)
 .pos_array:
         clc
@@ -41,32 +13,7 @@ cur_char = ptr0
         sta pos_arr1,Y
         dey
         bpl .pos_array
-        ENDM
-
-;;; Rotate characters and positions
-        MAC ROTATE_ARRAY
-        ldy #(CHARACTERS_COUNT-2)
-.rotate_loop:
-        lda {1},Y
-        sta {1}+1,Y
-        dey
-        bpl .rotate_loop
-        ENDM
-
-;;; Round rotate characters and positions
-        MAC ROUND_ROTATE_ARRAY
-        ldx {1}+CHARACTERS_COUNT-1
-        ROTATE_ARRAY {1}
-        stx {1}
-        ENDM
-
-;;; Round rotate charactes and positions
-        MAC ROUND_ROTATE_CHARACTERS
-        ROUND_ROTATE_ARRAY font_ptr0
-        ROUND_ROTATE_ARRAY font_ptr1
-        ROUND_ROTATE_ARRAY pos_arr0
-        ROUND_ROTATE_ARRAY pos_arr1
-        ENDM
+    ENDM
 
 ;;; Uses A register
 text_init:	SUBROUTINE
@@ -92,9 +39,15 @@ text_init:	SUBROUTINE
         sta COLUP0
         sta COLUP1
 
+        ;; Initializes text pointers
+        SET_POINTER text_ptr0, text_data0
+        SET_POINTER text_ptr1, text_data1
+
         ;; Initialize font offsets
-        INIT_FONT_POINTERS 0
-        INIT_FONT_POINTERS 1
+        lda #>text_font
+        sta sp0_ptr+1
+        sta sp1_ptr+1
+
         INIT_SPRITES_POSITIONS
 
         ; Start with max height without replacing character
@@ -103,10 +56,11 @@ text_init:	SUBROUTINE
         sta bg_offset
 	rts
 
-text_vblank:	SUBROUTINE
-        jsr tia_player          ; Play the music
-
-        ;; Compte bg_ptr from bg_table + bg_offset
+;;; Move the background pointer in the background buffer; For the
+;;; parallax effect.
+;;; Uses A register
+    MAC UPDATE_BACKGROUND_POINTER
+        ;; Compute bg_ptr from bg_table + bg_offset
         sec
         lda #(TOTAL_SPRITE_HEIGHT-1)
         sbc bg_offset
@@ -125,11 +79,78 @@ text_vblank:	SUBROUTINE
         lda #(TOTAL_SPRITE_HEIGHT-1)
         sta bg_offset
 .end_bg_offset
+    ENDM
 
-        ;; Update hdr_height and rotate characters as required
+;;; Rotate characters and positions
+    MAC ROTATE_ARRAY
+        ldy #(CHARACTERS_COUNT-2)
+.rotate_loop:
+        lda {1},Y
+        sta {1}+1,Y
+        dey
+        bpl .rotate_loop
+    ENDM
+
+;;; Round rotate characters and positions
+    MAC ROUND_ROTATE_ARRAY
+        ldx {1}+CHARACTERS_COUNT-1
+        ROTATE_ARRAY {1}
+        stx {1}
+    ENDM
+
+
+;;; argument 0 or 1 indicates which text stream
+    MAC UPDATE_FIRST_CHARACTER
+        ldy #$00
+        lda (text_ptr{1}),Y
+        tay                     ; Save character for later use
+        REPEAT 3
+        asl
+        REPEND
+        sta font_ptr{1}         ; Store updated font pointer
+
+        tya                     ; Recall fetched character
+        beq .rewind_pointer
+        ;; Increment text pointer for next use
+        clc
+        lda text_ptr{1}
+        adc #$01
+        sta text_ptr{1}
+        lda text_ptr{1}+1
+        adc #$00
+        sta text_ptr{1}+1
+        jmp .end
+.rewind_pointer:
+        SET_POINTER text_ptr{1},text_data{1}
+.end:
+     ENDM
+
+;;; Round rotate charactes and positions
+    MAC UPDATE_CHARACTERS
+        ;; Rotate font pointers
+        ROTATE_ARRAY font_ptr0
+        ROTATE_ARRAY font_ptr1
+
+        ;; And add new character at the beginning of the arrays
+        UPDATE_FIRST_CHARACTER 0
+        UPDATE_FIRST_CHARACTER 1
+
+        ;; Update characters positions
+        ROUND_ROTATE_ARRAY pos_arr0
+        ROUND_ROTATE_ARRAY pos_arr1
+    ENDM
+
+text_vblank:	SUBROUTINE
+        jsr tia_player            ; Play the music
+        UPDATE_BACKGROUND_POINTER ; Used for parallax
+
+        ;; Update hdr_height for text animation; and fetch new
+        ;; character as required.
         dec hdr_height
-        bpl .skip_rotate
-        ROUND_ROTATE_CHARACTERS
+        bmi .update_characters
+        jmp .skip_rotate
+.update_characters:
+        UPDATE_CHARACTERS
         lda #(TOTAL_SPRITE_HEIGHT-1)
         sta hdr_height
 .skip_rotate:
@@ -315,11 +336,3 @@ border_colors:
         dc.b $26, $26, $26, $26, $28, $28, $28, $28
         dc.b $2a, $2a, $2a, $2a, $2c, $2c, $2c, $2e
         dc.b $2e, $2e
-
-sp0_table:
-        dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
-        dc.b $ff, $7e, $3c, $18, $18, $3c, $7e, $ff
-
-sp1_table:
-        dc.b $18, $3c, $7e, $ff, $ff, $7e, $3c, $18
-        dc.b $18, $3c, $7e, $ff, $ff, $7e, $3c, $18
