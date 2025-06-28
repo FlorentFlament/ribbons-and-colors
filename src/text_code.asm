@@ -50,35 +50,33 @@ text_init:	SUBROUTINE
 
         INIT_SPRITES_POSITIONS
 
-        ; Start with max height without replacing character
+        ;; 11 (TOTAL_SPRITE_HEIGHT) related counters
         lda #(TOTAL_SPRITE_HEIGHT-1)
-        sta hdr_height
-        sta bg_offset
+        sta mod_11
+        asl
+        sta mod_22
+        lda #$00
+        sta div_11
 	rts
 
 ;;; Move the background pointer in the background buffer; For the
 ;;; parallax effect.
-;;; Uses A register
+;;; Uses A register, and ptr0
+bg_offset = ptr0
     MAC UPDATE_BACKGROUND_POINTER
-        ;; Compute bg_ptr from bg_table + bg_offset
-        sec
-        lda #(TOTAL_SPRITE_HEIGHT-1)
-        sbc bg_offset
+        ;; Compute bg_offset
+        lda mod_22
+        lsr
+        sta bg_offset
+        eor #$ff
+        clc
+        adc #TOTAL_SPRITE_HEIGHT ; TOTAL_SPRITE_HEIGHT - bg_offset
+        clc
         adc #<bg_table
         sta bg_ptr
         lda #>bg_table
         adc #$00
         sta bg_ptr+1
-
-        ;; Update bg_offset as required
-        lda frame_cnt
-        and #$01
-        beq .end_bg_offset
-        dec bg_offset
-        bpl .end_bg_offset
-        lda #(TOTAL_SPRITE_HEIGHT-1)
-        sta bg_offset
-.end_bg_offset
     ENDM
 
 ;;; Rotate characters and positions
@@ -144,19 +142,27 @@ text_vblank:	SUBROUTINE
         jsr tia_player            ; Play the music
         UPDATE_BACKGROUND_POINTER ; Used for parallax
 
-        ;; Update hdr_height for text animation; and fetch new
-        ;; character as required.
-        dec hdr_height
-        bmi .update_characters
-        jmp .skip_rotate
-.update_characters:
+        ;; Fetch new character every 11 frames
+        lda mod_11
+        cmp #(TOTAL_SPRITE_HEIGHT-1)
+        bne .skip_rotate
         UPDATE_CHARACTERS
-        lda #(TOTAL_SPRITE_HEIGHT-1)
-        sta hdr_height
 .skip_rotate:
 	rts
 
 text_overscan:  SUBROUTINE
+        dec mod_22
+        bpl .mod_22_positive
+        lda #(2*TOTAL_SPRITE_HEIGHT - 1)
+        sta mod_22
+.mod_22_positive:
+
+        dec mod_11
+        bpl .mod_11_positive
+        lda #(TOTAL_SPRITE_HEIGHT-1) ; That's 10
+        sta mod_11
+        inc div_11
+.mod_11_positive:
         rts
 
 ;;; Position Sprites according to sp0_pos and sp1_pos
@@ -202,12 +208,16 @@ text_overscan:  SUBROUTINE
         sta GRP1
         ENDM
 
+;;; Draw border while clearing sprites and playfields
     MAC DRAW_BORDER
         ldy #(BORDER_HEIGHT-1)
 .border_loop:
         sta WSYNC
         lda border_colors,Y
         sta COLUPF
+        lda #$00
+        sta GRP0
+        sta GRP1
         lda #$ff
         sta PF0
         sta PF1
@@ -225,7 +235,7 @@ text_kernel:	SUBROUTINE
         sta PF0
 
 ;;; Drawing variable height header - to create movement
-        ldy hdr_height
+        ldy mod_11
         dey
         bmi .skip_header
 .header_loop:
@@ -296,7 +306,7 @@ sp1_pos = ptr1
 .end_column_loop:
 
         ldy #(TOTAL_SPRITE_HEIGHT-1)
-        cpy hdr_height
+        cpy mod_11
         beq .skip_footer
 .footer_loop:
         lda (bg_ptr),Y
@@ -306,16 +316,11 @@ sp1_pos = ptr1
         sta GRP0
         sta GRP1
         dey
-        cpy hdr_height
+        cpy mod_11
         bne .footer_loop
 .skip_footer:
 
-        ;; Clear Sprites
-        sta WSYNC
-        lda #$00
-        sta GRP0
-        sta GRP1
-
+        ;; Clear sprites as well
         DRAW_BORDER
 
         ;; Clear payfield

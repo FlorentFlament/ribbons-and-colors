@@ -1,9 +1,12 @@
 ;;; Needs be stored during the whole intro. Keeps track of scroll
 ;;; position, and parallax offset
-hdr_height      ds.b    1     ; Header height
-bg_offset       ds.b    1     ; Background offset - parallax effect
 text_ptr0       ds.w    1     ; Text 0 pointer
 text_ptr1       ds.w    1     ; Text 1 pointer
+
+;;; Cause 11 is the total sprite height (8 + 3)
+div_11          ds.b    1       ; Frame counter divided by 11.
+mod_11          ds.b    1       ; Frame counter modulo 11.
+mod_22          ds.b    1       ; Frame counter divided by 22.
 
 ;;; Global arrays of pointer offsets pre-computed in vblank
 ;;; Font offsets array oo build the font pointers sp0_ptr and sp1_ptr
