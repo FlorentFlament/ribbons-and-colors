@@ -39,8 +39,8 @@ main_loop:	SUBROUTINE
 	VERTICAL_SYNC		; 4 scanlines Vertical Sync signal
 
 .vblank:
-;;; 48 vblank scanlines
-	lda #56
+;;; 47 vblank scanlines - 48th will be first kernel line
+	lda #55
 	sta TIM64T
         jsr main_vblank
 	WAIT_TIMINT
@@ -56,7 +56,7 @@ main_loop:	SUBROUTINE
 
 .overscan:
 ;;; 30+4 overscan scanlines (+ vertical sync)
-	lda #36
+	lda #37
 	sta TIM64T
         jsr main_overscan
 	WAIT_TIMINT
