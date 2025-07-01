@@ -2,3 +2,4 @@
 *.lst
 *.sym
 TODO.md
+.generated/
