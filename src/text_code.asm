@@ -215,22 +215,22 @@ text_overscan:  SUBROUTINE
         sta CTRLPF
         ldy #(BORDER_HEIGHT-2)
 .border_loop:
-        lda header_bgcols,Y
-        ldx header_pfcols,Y
+        lda border_top_bgcols,Y
+        ldx border_top_pfcols,Y
         sta WSYNC
         sta COLUBK
         stx COLUPF
-        lda header_pf0,Y
+        lda border_top_pf0,Y
         sta PF0
-        lda header_pf1,Y
+        lda border_top_pf1,Y
         sta PF1
-        lda header_pf2,Y
+        lda border_top_pf2,Y
         sta PF2
-        lda header_pf3,Y
+        lda border_top_pf3,Y
         sta PF0
-        lda header_pf4,Y
+        lda border_top_pf4,Y
         sta PF1
-        lda header_pf5,Y
+        lda border_top_pf5,Y
         sta PF2
         dey
         bne .border_loop        ; Trick last line performed outside loop
@@ -240,7 +240,7 @@ text_overscan:  SUBROUTINE
         lda #$01
         sta CTRLPF              ; Playfield becomes mirror
         lda #$00
-        ldx header_bgcols,Y
+        ldx border_top_bgcols,Y
         sta WSYNC
         sta COLUBK
         stx COLUPF              ; Same color on playfield
@@ -256,7 +256,7 @@ text_overscan:  SUBROUTINE
         ;; Do first line separately just drawing background and setting things
         ;; No playfield mirror
         ldy #(BORDER_HEIGHT-1)
-        lda footer_bgcols,Y
+        lda border_bottom_bgcols,Y
         sta WSYNC
         sta COLUBK
         sta COLUPF              ; Same color so we can do what we want with PF
@@ -267,22 +267,22 @@ text_overscan:  SUBROUTINE
 
         dey
 .border_loop:
-        lda footer_bgcols,Y
-        ldx footer_pfcols,Y
+        lda border_bottom_bgcols,Y
+        ldx border_bottom_pfcols,Y
         sta WSYNC
         sta COLUBK
         stx COLUPF
-        lda footer_pf0,Y
+        lda border_bottom_pf0,Y
         sta PF0
-        lda footer_pf1,Y
+        lda border_bottom_pf1,Y
         sta PF1
-        lda footer_pf2,Y
+        lda border_bottom_pf2,Y
         sta PF2
-        lda footer_pf3,Y
+        lda border_bottom_pf3,Y
         sta PF0
-        lda footer_pf4,Y
+        lda border_bottom_pf4,Y
         sta PF1
-        lda footer_pf5,Y
+        lda border_bottom_pf5,Y
         sta PF2
         dey
         bpl .border_loop        ; Trick last line performed outside loop
@@ -393,12 +393,6 @@ bg_table:
         dc.b $90, $92, $92, $94, $94, $96, $96, $94
         dc.b $94, $92, $92, $90, $92, $92, $94, $94
         dc.b $96, $96, $94, $94, $92, $92
-
-border_colors:
-        dc.b $22, $22, $22, $22, $24, $24, $24, $24
-        dc.b $26, $26, $26, $26, $28, $28, $28, $28
-        dc.b $2a, $2a, $2a, $2a, $2c, $2c, $2c, $2e
-        dc.b $2e, $2e
 
 sine_table:
 	dc.b $0f, $10, $10, $11, $11, $11, $12, $12
