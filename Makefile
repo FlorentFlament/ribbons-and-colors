@@ -9,7 +9,7 @@ all: main.bin
 generated:
 	mkdir generated
 
-generated/text_data.asm: generated text/text0.txt text/text1.txt
+generated/text_words.asm: generated text/text0.txt text/text1.txt
 	echo "text_data0:" > $@
 	cat text/text0.txt | sed 's/\. /;   /g' | sed "s/[,']/;/g" | sed 's/^/\tdc.b "/' | sed 's/\.$$$\/;   "/' >> $@
 	echo "\tdc.b 0" >> $@
@@ -21,7 +21,7 @@ generated/gfx_data.asm: gfx/shadow2025_haut.png gfx/shadow2025_bas.png
 	tools/png2hrpf.py gfx/shadow2025_haut.png border_top > $@
 	tools/png2hrpf.py gfx/shadow2025_bas.png border_bottom >>$@
 
-main.bin: src/main.asm generated/text_data.asm generated/gfx_data.asm $(SRC)
+main.bin: src/main.asm generated/text_words.asm generated/gfx_data.asm $(SRC)
 	dasm $< -o$@ -l$(patsubst %.bin,%,$@).lst -s$(patsubst %.bin,%,$@).sym $(DFLAGS)
 
 run: main.bin

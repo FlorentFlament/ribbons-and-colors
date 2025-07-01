@@ -2,5 +2,6 @@
         INCLUDE "timeline_data.asm"
         INCLUDE "sync_data.asm"
         INCLUDE "bossa-novayaska_trackdata.asm"
-        INCLUDE "text_data.asm"
+        INCLUDE "text_fx_data.asm"
+        INCLUDE "text_words.asm"
         INCLUDE "gfx_data.asm"
