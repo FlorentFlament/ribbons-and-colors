@@ -33,12 +33,12 @@
         lda #0
         SINE_FUNCTION
         clc
-        adc #40
+        adc #8
         sta pos_arr0,Y
         lda #64
         SINE_FUNCTION
         clc
-        adc #80
+        adc #50
         sta pos_arr1,Y
         dey
         bpl .pos_array

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from math import sin, pi
 from asmlib import *
-AMPLITUDE = 32
+AMPLITUDE = 96 # Should be between 1/3 and 2/3 of 144 (/ (* 2 144) 3)
 OFFSET = 0
 
 # -0.5 to have rounded value between 0 and AMPLITUDE-1 (ignoring OFFSET)
