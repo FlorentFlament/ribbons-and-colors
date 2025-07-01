@@ -36,14 +36,6 @@ text_init:	SUBROUTINE
 	sta NUSIZ1
         sta COLUBK
         sta COLUPF
-        ;; Mirror playfield
-        lda #$01
-        sta CTRLPF
-        lda #$cf
-        sta PF0
-        lda #$ff
-        sta PF1
-        sta PF2
         ;; Sprites color
         lda #$ff
         sta COLUP0
@@ -236,13 +228,51 @@ text_overscan:  SUBROUTINE
         bpl .border_loop
     ENDM
 
-text_kernel:	SUBROUTINE
-        DRAW_BORDER
+    MAC DRAW_BORDER_TOP
+        ;; No playfield mirror
+        lda #$00
+        sta CTRLPF
+        ldy #(BORDER_HEIGHT-2)
+.border_loop:
+        lda header_bgcols,Y
+        ldx header_pfcols,Y
+        sta WSYNC
+        sta COLUBK
+        stx COLUPF
+        lda header_pf0,Y
+        sta PF0
+        lda header_pf1,Y
+        sta PF1
+        lda header_pf2,Y
+        sta PF2
+        lda header_pf3,Y
+        sta PF0
+        lda header_pf4,Y
+        sta PF1
+        lda header_pf5,Y
+        sta PF2
+        dey
+        bne .border_loop        ; Trick last line performed outside loop
 
-        ;; Remove left and right most playfield to avoid hmove
-        ;; artefacts
+        ;; For last border line, prepare setup for main zone while
+        ;; drawing background on the playfield.
+        lda #$01
+        sta CTRLPF              ; Playfield becomes mirror
+        lda #$00
+        ldx header_bgcols,Y
+        sta WSYNC
+        sta COLUBK
+        stx COLUPF              ; Same color on playfield
+        ;; Prepare playfield to hide HMOVE artifact
         lda #$cf
         sta PF0
+        lda #$ff
+        sta PF1
+        sta PF2
+    ENDM
+
+text_kernel:	SUBROUTINE
+        DRAW_BORDER_TOP
 
 ;;; Drawing variable height header - to create movement
         ldy mod_11

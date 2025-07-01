@@ -17,6 +17,9 @@ generated/text_data.asm: generated text/text0.txt text/text1.txt
 	cat text/text1.txt | sed 's/\. /;   /g' | sed "s/[,']/;/g" | sed 's/^/\tdc.b "/' | sed 's/\.$$$\/;   "/' >> $@
 	echo "\tdc.b 0" >> $@
 
+generated/gfx_data.asm:
+	tools/png2hrpf.py gfx/shadow2025_vcspal_40x26.png header > $@
+
 main.bin: src/main.asm generated/text_data.asm $(SRC)
 	dasm $< -o$@ -l$(patsubst %.bin,%,$@).lst -s$(patsubst %.bin,%,$@).sym $(DFLAGS)
 
