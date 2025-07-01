@@ -1,25 +1,44 @@
-;;; Initialize sprite positions
+;;; Takes Y in Y and K1 in A and compute a sine based on frame_cnt
 ;;; Uses ptr0
-    MAC UPDATE_SPRITES_POSITIONS
-        lda frame_cnt
-        sta ptr0
-        ldy #(CHARACTERS_COUNT-1)
-.pos_array:
+;;; goal is to compute K0*sin(K1 + K2*Y + K3*frame_cnt)
+;;; With Kn varying (slowly) with frame_cnt
+        MAC SINE_FUNCTION
+        sta ptr0                ; Accumulator
         tya
         sec
-        sbc div_11
+        sbc div_11              ; Adjust Y according to moving characters
         REPEAT 3
-        asl
+        asl                     ; multiply Y by 8
         REPEND
         clc
         adc ptr0
+        sta ptr0
+        lda frame_cnt
+        REPEAT 2
+        asl                     ; multiply by 4
+        REPEND
+        clc
+        adc ptr0
+        sta ptr0
         tax
         lda sine_table,X
+        ;lsr                     ; multiply by 2
+        ENDM
+
+;;; Initialize sprite positions
+;;; Uses ptr0
+    MAC UPDATE_SPRITES_POSITIONS
+        ldy #(CHARACTERS_COUNT-1)
+.pos_array:
+        lda #0
+        SINE_FUNCTION
         clc
-        adc #30
+        adc #40
         sta pos_arr0,Y
+        lda #64
+        SINE_FUNCTION
         clc
-        adc #60
+        adc #80
         sta pos_arr1,Y
         dey
         bpl .pos_array
