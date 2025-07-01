@@ -96,7 +96,6 @@ bg_offset = ptr0
         stx {1}
     ENDM
 
-
 ;;; argument 0 or 1 indicates which text stream
     MAC UPDATE_FIRST_CHARACTER
         ldy #$00
@@ -210,24 +209,6 @@ text_overscan:  SUBROUTINE
         sta GRP1
         ENDM
 
-;;; Draw border while clearing sprites and playfields
-    MAC DRAW_BORDER
-        ldy #(BORDER_HEIGHT-1)
-.border_loop:
-        sta WSYNC
-        lda border_colors,Y
-        sta COLUPF
-        lda #$00
-        sta GRP0
-        sta GRP1
-        lda #$ff
-        sta PF0
-        sta PF1
-        sta PF2
-        dey
-        bpl .border_loop
-    ENDM
-
     MAC DRAW_BORDER_TOP
         ;; No playfield mirror
         lda #$00
@@ -269,6 +250,42 @@ text_overscan:  SUBROUTINE
         lda #$ff
         sta PF1
         sta PF2
+    ENDM
+
+    MAC DRAW_BORDER_BOTTOM
+        ;; Do first line separately just drawing background and setting things
+        ;; No playfield mirror
+        ldy #(BORDER_HEIGHT-1)
+        lda footer_bgcols,Y
+        sta WSYNC
+        sta COLUBK
+        sta COLUPF              ; Same color so we can do what we want with PF
+        lda #$00                ; Clear sprites
+        sta GRP0
+        sta GRP1
+        sta CTRLPF              ; No more playfield mirror
+
+        dey
+.border_loop:
+        lda footer_bgcols,Y
+        ldx footer_pfcols,Y
+        sta WSYNC
+        sta COLUBK
+        stx COLUPF
+        lda footer_pf0,Y
+        sta PF0
+        lda footer_pf1,Y
+        sta PF1
+        lda footer_pf2,Y
+        sta PF2
+        lda footer_pf3,Y
+        sta PF0
+        lda footer_pf4,Y
+        sta PF1
+        lda footer_pf5,Y
+        sta PF2
+        dey
+        bpl .border_loop        ; Trick last line performed outside loop
     ENDM
 
 text_kernel:	SUBROUTINE
@@ -361,12 +378,13 @@ sp1_pos = ptr1
 .skip_footer:
 
         ;; Clear sprites as well
-        DRAW_BORDER
+        DRAW_BORDER_BOTTOM
 
-        ;; Clear payfield
+        ;; Clear payfield and background
         sta WSYNC
         lda #$00
         sta COLUPF
+        sta COLUBK
         rts
 
 ;;; Doubling the table is a trick to be able to move start pointer in
