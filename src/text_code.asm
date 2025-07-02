@@ -176,10 +176,6 @@ bg_offset = ptr0
         ;; And add new character at the beginning of the arrays
         UPDATE_FIRST_CHARACTER 0
         UPDATE_FIRST_CHARACTER 1
-
-        ;; Update characters positions
-        ROUND_ROTATE_ARRAY pos_arr0
-        ROUND_ROTATE_ARRAY pos_arr1
     ENDM
 
 text_vblank:	SUBROUTINE
