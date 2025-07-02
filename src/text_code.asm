@@ -84,8 +84,9 @@ text_init:	SUBROUTINE
         sta COLUBK
         sta COLUPF
         ;; Sprites color
-        lda #$ff
+        lda #$fe
         sta COLUP0
+        lda #$fa
         sta COLUP1
 
         ;; Initializes text pointers
