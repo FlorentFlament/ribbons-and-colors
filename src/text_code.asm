@@ -2,6 +2,7 @@
 ;;; Uses ptr0
 ;;; goal is to compute K0*sin(K1 + K2*ptr0 + K3*frame_cnt) + k4
 ;;; ptr0 (8 bytes) - index of the character - untouched
+;;; Uses ptr0+1
 ;;; Y used for internal loops
 accu = ptr0+1
         MAC SINE_FUNCTION
@@ -43,40 +44,25 @@ accu = ptr0+1
         adc k4,X
         ENDM
 
-        MAC SINE_FUNCTION_OLD
-        sta ptr0                ; Accumulator
-        tya
-        sec
-        sbc div_11              ; Adjust Y according to moving characters
-        REPEAT 3
-        asl                     ; multiply Y by 8
-        REPEND
-        clc
-        adc ptr0
-        sta ptr0
-        lda frame_cnt
-        REPEAT 2
-        asl                     ; multiply by 4
-        REPEND
-        clc
-        adc ptr0
-        sta ptr0
-        tax
-        lda sine_table,X
-        ;lsr                     ; multiply by 2
-        ENDM
-
 ;;; Initialize sprite positions
-;;; Uses ptr0
+;;; Uses ptr0 and sp0_ptr
+fx_index = sp0_ptr
     MAC UPDATE_SPRITES_POSITIONS
+        ;; Choose FX
+        lda frame_cnt+1
+        and #$03
+        asl
+        sta fx_index
+
         lda #(CHARACTERS_COUNT-1)
         sta ptr0
 .pos_array:
-        ldx #4
+        ldx fx_index
         SINE_FUNCTION
         ldy ptr0
         sta pos_arr0,Y
-        ldx #5
+        ldx fx_index
+        inx
         SINE_FUNCTION
         ldy ptr0
         sta pos_arr1,Y
@@ -447,13 +433,14 @@ sp1_pos = ptr1
         rts
 
 ;;; Sine 1/K0*sin(K1 + K2*ptr0 + K3*frame_cnt) + K4
+;;; ptr0 is the character index
 k0:
-        dc.b 0,  0,  0,  0,  1,  1,
+        dc.b 0,  0,  0,  0,  1,  1,  1,  1
 k1:
-        dc.b 0, 64,  0, 96,  0, 32,
+        dc.b 0, 64,  0, 96,  0, 32,  0, 96
 k2:
-        dc.b 3,  3,  3,  3,  2,  2,
+        dc.b 3,  3,  3,  3,  2,  2,  4,  4
 k3:
-        dc.b 2,  2,  3,  3,  1,  1,
+        dc.b 2,  2,  3,  3,  1,  1,  2,  2
 k4:
-        dc.b 8, 50, 16, 42, 38, 68,
+        dc.b 8, 50, 16, 42, 38, 68, 42, 64
