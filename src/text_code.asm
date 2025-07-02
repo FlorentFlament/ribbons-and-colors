@@ -45,31 +45,16 @@ accu = ptr0+1
         ENDM
 
 ;;; Function sine_function
-sine_function:
+sine_function:  SUBROUTINE
         SINE_FUNCTION
         rts
 
 ;;; Initialize sprite positions
 ;;; Uses ptr0 and sp0_ptr - vblank part
-    MAC UPDATE_SPRITES_POSITIONS_VBLANK
-        lda #(CHARACTERS_COUNT-3) ; 2 chacters done in overscan
-        sta ptr0
-.pos_array:
-        ldx fx_index
-        jsr sine_function
-        ldy ptr0
-        sta pos_arr0,Y
-        ldx fx_index
-        inx
-        jsr sine_function
-        ldy ptr0
-        sta pos_arr1,Y
-        dec ptr0
-        bpl .pos_array
-    ENDM
-
-    MAC UPDATE_SPRITES_POSITIONS_OVERSCAN
-        lda #(CHARACTERS_COUNT-1)
+;;; 2 parameters start and end
+;;; for instance UPDATE_SPRITES_POSITIONS (CHARACTERS_COUNT-3),$ff
+    MAC UPDATE_SPRITES_POSITIONS
+        lda #{1}
         sta ptr0
 .pos_array:
         ldx fx_index
@@ -83,7 +68,7 @@ sine_function:
         sta pos_arr1,Y
         dey
         sty ptr0
-        cpy #(CHARACTERS_COUNT-3)
+        cpy #{2}
         bne .pos_array
     ENDM
 
@@ -196,7 +181,7 @@ bg_offset = ptr0
     ENDM
 
 text_vblank:	SUBROUTINE
-        UPDATE_SPRITES_POSITIONS_VBLANK
+        UPDATE_SPRITES_POSITIONS (CHARACTERS_COUNT-3),$ff
 	rts
 
 text_overscan:  SUBROUTINE
@@ -228,7 +213,7 @@ text_overscan:  SUBROUTINE
         bne .skip_rotate
         UPDATE_CHARACTERS       ; pointers
 .skip_rotate:
-        UPDATE_SPRITES_POSITIONS_OVERSCAN
+        UPDATE_SPRITES_POSITIONS (CHARACTERS_COUNT-1),(CHARACTERS_COUNT-3)
         rts
 
 ;;; Position Sprites according to sp0_pos and sp1_pos
