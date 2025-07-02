@@ -157,32 +157,32 @@ bg_offset = ptr0
     ENDM
 
 text_vblank:	SUBROUTINE
-        jsr tia_player            ; Play the music
-        UPDATE_BACKGROUND_POINTER ; Used for parallax
-
-        ;; Fetch new character every 11 frames
-        lda mod_11
-        cmp #(TOTAL_SPRITE_HEIGHT-1)
-        bne .skip_rotate
-        UPDATE_CHARACTERS
-.skip_rotate:
-
         UPDATE_SPRITES_POSITIONS
 	rts
 
 text_overscan:  SUBROUTINE
+        jsr tia_player            ; Play the music
+
+        ;; Manage mod_11, mod_22 and div_11 counters
         dec mod_22
         bpl .mod_22_positive
         lda #(2*TOTAL_SPRITE_HEIGHT - 1)
         sta mod_22
 .mod_22_positive:
-
         dec mod_11
         bpl .mod_11_positive
         lda #(TOTAL_SPRITE_HEIGHT-1) ; That's 10
         sta mod_11
         inc div_11
 .mod_11_positive:
+
+        UPDATE_BACKGROUND_POINTER ; Used for parallax
+        ;; Fetch new character every 11 frames
+        lda mod_11
+        cmp #(TOTAL_SPRITE_HEIGHT-1)
+        bne .skip_rotate
+        UPDATE_CHARACTERS       ; pointers
+.skip_rotate:
         rts
 
 ;;; Position Sprites according to sp0_pos and sp1_pos
