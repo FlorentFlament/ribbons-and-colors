@@ -9,7 +9,7 @@ all: main.bin
 generated:
 	mkdir generated
 
-generated/text_words.asm: generated text/text0.txt text/text1.txt
+generated/text_words.asm: generated text/text0.txt
 	echo "text_data0:" > $@
 	echo "\tdc.b \"                                \"" >> $@
 	echo "text_data1:" >> $@
