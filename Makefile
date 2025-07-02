@@ -11,10 +11,9 @@ generated:
 
 generated/text_words.asm: generated text/text0.txt text/text1.txt
 	echo "text_data0:" > $@
-	cat text/text0.txt | sed 's/\. /;   /g' | sed "s/[,']/;/g" | sed 's/^/\tdc.b "/' | sed 's/\.$$$\/;   "/' >> $@
-	echo "\tdc.b 0" >> $@
+	echo "\tdc.b \"                                \"" >> $@
 	echo "text_data1:" >> $@
-	cat text/text1.txt | sed 's/\. /;   /g' | sed "s/[,']/;/g" | sed 's/^/\tdc.b "/' | sed 's/\.$$$\/;   "/' >> $@
+	cat text/text0.txt | sed 's/\. /;   /g' | sed "s/[,']/;/g" | sed 's/^/\tdc.b "/' | sed 's/\.$$$\/;   "/' >> $@
 	echo "\tdc.b 0" >> $@
 
 generated/gfx_data.asm: gfx/shadow2025_haut.png gfx/shadow2025_bas.png

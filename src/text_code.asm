@@ -89,8 +89,8 @@ text_init:	SUBROUTINE
         sta COLUP1
 
         ;; Initializes text pointers
-        SET_POINTER text_ptr0, text_data0
-        SET_POINTER text_ptr1, text_data1
+        SET_POINTER text_ptr0, text_data1
+        SET_POINTER text_ptr1, text_data0
 
         ;; Initialize font offsets
         lda #>text_font
@@ -165,7 +165,7 @@ bg_offset = ptr0
         sta text_ptr{1}+1
         jmp .end
 .rewind_pointer:
-        SET_POINTER text_ptr{1},text_data{1}
+        SET_POINTER text_ptr{1},text_data1
 .end:
      ENDM
 
