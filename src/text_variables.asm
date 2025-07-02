@@ -2,6 +2,8 @@
 ;;; position, and parallax offset
 text_ptr0       ds.w    1     ; Text 0 pointer
 text_ptr1       ds.w    1     ; Text 1 pointer
+bg_ptr          ds.w    1
+fx_index        ds.b    1       ; Text FX index
 
 ;;; Cause 11 is the total sprite height (8 + 3)
 div_11          ds.b    1       ; Frame counter divided by 11.
@@ -18,7 +20,5 @@ pos_arr0        ds.b    CHARACTERS_COUNT ; Positions array for sprite 0
 pos_arr1        ds.b    CHARACTERS_COUNT ; Positions array for sprite 1
 
 ;;; Pointers used during the whole kernel
-;;; Pointer in the background table used for the parallax effect.
-bg_ptr          ds.w    1
 sp0_ptr         ds.w    1
 sp1_ptr         ds.w    1

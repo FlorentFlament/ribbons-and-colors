@@ -44,30 +44,47 @@ accu = ptr0+1
         adc k4,X
         ENDM
 
-;;; Initialize sprite positions
-;;; Uses ptr0 and sp0_ptr
-fx_index = sp0_ptr
-    MAC UPDATE_SPRITES_POSITIONS
-        ;; Choose FX
-        lda frame_cnt+1
-        and #$03
-        asl
-        sta fx_index
+;;; Function sine_function
+sine_function:
+        SINE_FUNCTION
+        rts
 
-        lda #(CHARACTERS_COUNT-1)
+;;; Initialize sprite positions
+;;; Uses ptr0 and sp0_ptr - vblank part
+    MAC UPDATE_SPRITES_POSITIONS_VBLANK
+        lda #(CHARACTERS_COUNT-3) ; 2 chacters done in overscan
         sta ptr0
 .pos_array:
         ldx fx_index
-        SINE_FUNCTION
+        jsr sine_function
         ldy ptr0
         sta pos_arr0,Y
         ldx fx_index
         inx
-        SINE_FUNCTION
+        jsr sine_function
         ldy ptr0
         sta pos_arr1,Y
         dec ptr0
         bpl .pos_array
+    ENDM
+
+    MAC UPDATE_SPRITES_POSITIONS_OVERSCAN
+        lda #(CHARACTERS_COUNT-1)
+        sta ptr0
+.pos_array:
+        ldx fx_index
+        jsr sine_function
+        ldy ptr0
+        sta pos_arr0,Y
+        ldx fx_index
+        inx
+        jsr sine_function
+        ldy ptr0
+        sta pos_arr1,Y
+        dey
+        sty ptr0
+        cpy #(CHARACTERS_COUNT-3)
+        bne .pos_array
     ENDM
 
 ;;; Uses A register
@@ -179,7 +196,7 @@ bg_offset = ptr0
     ENDM
 
 text_vblank:	SUBROUTINE
-        UPDATE_SPRITES_POSITIONS
+        UPDATE_SPRITES_POSITIONS_VBLANK
 	rts
 
 text_overscan:  SUBROUTINE
@@ -198,6 +215,12 @@ text_overscan:  SUBROUTINE
         inc div_11
 .mod_11_positive:
 
+        ;; Update FX index
+        lda frame_cnt+1
+        and #$03
+        asl                     ; fx_index is pair
+        sta fx_index
+
         UPDATE_BACKGROUND_POINTER ; Used for parallax
         ;; Fetch new character every 11 frames
         lda mod_11
@@ -205,6 +228,7 @@ text_overscan:  SUBROUTINE
         bne .skip_rotate
         UPDATE_CHARACTERS       ; pointers
 .skip_rotate:
+        UPDATE_SPRITES_POSITIONS_OVERSCAN
         rts
 
 ;;; Position Sprites according to sp0_pos and sp1_pos
