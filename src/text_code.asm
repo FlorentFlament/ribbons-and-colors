@@ -1,8 +1,49 @@
 ;;; Takes Y in Y and K1 in A and compute a sine based on frame_cnt
 ;;; Uses ptr0
-;;; goal is to compute K0*sin(K1 + K2*Y + K3*frame_cnt)
-;;; With Kn varying (slowly) with frame_cnt
+;;; goal is to compute K0*sin(K1 + K2*ptr0 + K3*frame_cnt) + k4
+;;; ptr0 (8 bytes) - index of the character - untouched
+;;; Y used for internal loops
+accu = ptr0+1
         MAC SINE_FUNCTION
+        ldy k2,X
+        lda ptr0
+        sec
+        sbc div_11
+        beq .skip_k2_mul
+.k2_mul:
+        asl
+        dey
+        bne .k2_mul
+.skip_k2_mul:
+        sta accu
+
+        ldy k3,X
+        lda frame_cnt
+        beq .skip_k3_mul
+.k3_mul:
+        asl
+        dey
+        bne .k3_mul
+.skip_k3_mul:
+        clc
+        adc accu
+        clc
+        adc k1,X
+
+        tay
+        lda sine_table,Y
+        ldy k0,X
+        beq .skip_k0_mul
+.k0_mul:
+        lsr
+        dey
+        bne .k0_mul
+.skip_k0_mul:
+        clc
+        adc k4,X
+        ENDM
+
+        MAC SINE_FUNCTION_OLD
         sta ptr0                ; Accumulator
         tya
         sec
@@ -28,19 +69,18 @@
 ;;; Initialize sprite positions
 ;;; Uses ptr0
     MAC UPDATE_SPRITES_POSITIONS
-        ldy #(CHARACTERS_COUNT-1)
+        lda #(CHARACTERS_COUNT-1)
+        sta ptr0
 .pos_array:
-        lda #0
+        ldx #4
         SINE_FUNCTION
-        clc
-        adc #8
+        ldy ptr0
         sta pos_arr0,Y
-        lda #64
+        ldx #5
         SINE_FUNCTION
-        clc
-        adc #50
+        ldy ptr0
         sta pos_arr1,Y
-        dey
+        dec ptr0
         bpl .pos_array
     ENDM
 
@@ -405,3 +445,15 @@ sp1_pos = ptr1
         sta COLUPF
         sta COLUBK
         rts
+
+;;; Sine 1/K0*sin(K1 + K2*ptr0 + K3*frame_cnt) + K4
+k0:
+        dc.b 0,  0,  0,  0,  1,  1,
+k1:
+        dc.b 0, 64,  0, 96,  0, 32,
+k2:
+        dc.b 3,  3,  3,  3,  2,  2,
+k3:
+        dc.b 2,  2,  3,  3,  1,  1,
+k4:
+        dc.b 8, 50, 16, 42, 38, 68,
