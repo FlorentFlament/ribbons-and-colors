@@ -4,6 +4,7 @@ text_ptr0       ds.w    1     ; Text 0 pointer
 text_ptr1       ds.w    1     ; Text 1 pointer
 bg_ptr          ds.w    1
 fx_index        ds.b    1       ; Text FX index
+track_cnt       ds.b    1       ; Track counter
 
 ;;; Cause 11 is the total sprite height (8 + 3)
 div_11          ds.b    1       ; Frame counter divided by 11.

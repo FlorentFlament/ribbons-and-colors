@@ -1,7 +1,8 @@
 ;;; Takes Y in Y and K1 in A and compute a sine based on frame_cnt
-;;; Uses ptr0
+;;; Uses ptr0+1
 ;;; goal is to compute K0*sin(K1 + K2*ptr0 + K3*frame_cnt) + k4
 ;;; ptr0 (8 bytes) - index of the character - untouched
+;;; X is the FX index - untouched
 ;;; Uses ptr0+1
 ;;; Y used for internal loops
 accu = ptr0+1
@@ -50,19 +51,20 @@ sine_function:  SUBROUTINE
         rts
 
 ;;; Initialize sprite positions
-;;; Uses ptr0 and sp0_ptr - vblank part
+;;; Uses ptr0
 ;;; 2 parameters start and end
 ;;; for instance UPDATE_SPRITES_POSITIONS (CHARACTERS_COUNT-3),$ff
     MAC UPDATE_SPRITES_POSITIONS
         lda #{1}
         sta ptr0
 .pos_array:
-        ldx fx_index
+        ldx fx_index            ; Level of indirection
+        lda fx_timeline,X
+        tax
         jsr sine_function
-        ldy ptr0
+        ldy ptr0                ; Y needs reloading
         sta pos_arr0,Y
-        ldx fx_index
-        inx
+        inx                     ; fx_index+1 for sprite 1
         jsr sine_function
         ldy ptr0
         sta pos_arr1,Y
@@ -105,6 +107,9 @@ text_init:	SUBROUTINE
         sta mod_22
         lda #$00
         sta div_11
+
+        lda #TRACK_PATTERN_FRAMES ; Counts 224 to 0 (never -)
+        sta track_cnt
 	rts
 
 ;;; Move the background pointer in the background buffer; For the
@@ -204,10 +209,21 @@ text_overscan:  SUBROUTINE
 .mod_11_positive:
 
         ;; Update FX index
-        lda frame_cnt+1
-        and #$03
-        asl                     ; fx_index is pair
-        sta fx_index
+        lda frame_cnt           ; Only every other frame
+        and #$01
+        beq .end_update_fx
+        dec track_cnt
+        bne .end_update_fx
+        lda #TRACK_PATTERN_FRAMES ; rewind pattern counter
+        sta track_cnt
+        ldx fx_index
+        inx
+        cpx #FX_MAX_INDEX
+        bmi .dont_rewind_fx
+        ldx #0
+.dont_rewind_fx:
+        stx fx_index
+.end_update_fx:
 
         UPDATE_BACKGROUND_POINTER ; Used for parallax
         ;; Fetch new character every 11 frames
@@ -443,12 +459,15 @@ sp1_pos = ptr1
 ;;; Sine 1/K0*sin(K1 + K2*ptr0 + K3*frame_cnt) + K4
 ;;; ptr0 is the character index
 k0:
-        dc.b 0,  0,  0,  0,  1,  1,  1,  1
+        dc.b   1,  1,  1,  1, 0,  0,  0,  0
 k1:
-        dc.b 0, 64,  0, 96,  0, 32,  0, 96
+        dc.b   0, 32,  0, 96, 0, 64,  0, 96
 k2:
-        dc.b 3,  3,  3,  3,  2,  2,  4,  4
+        dc.b   2,  2,  4,  4, 3,  3,  3,  3
 k3:
-        dc.b 2,  2,  3,  3,  1,  1,  2,  2
+        dc.b   1,  1,  2,  2, 2,  2,  3,  3
 k4:
-        dc.b 8, 50, 16, 42, 38, 68, 42, 64
+        dc.b  38, 68, 42, 64, 8, 50, 16, 42
+
+fx_timeline:
+        dc.b   0, 2, 4, 6
