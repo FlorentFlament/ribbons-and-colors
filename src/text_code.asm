@@ -1,16 +1,16 @@
 ;;; Takes Y in Y and K1 in A and compute a sine based on frame_cnt
 ;;; Uses ptr0+1
-;;; goal is to compute K0*sin(K1 + K2*ptr0 + K3*frame_cnt) + k4
+;;; Computing 1/(2**K0)*sin(K1 + (2**K2)*chr_ind + (2**K3)*frame_cnt) + K4
 ;;; ptr0 (8 bytes) - index of the character - untouched
 ;;; X is the FX index - untouched
 ;;; Uses ptr0+1
 ;;; Y used for internal loops
 accu = ptr0+1
         MAC SINE_FUNCTION
-        ldy k2,X
         lda ptr0
         sec
         sbc div_11
+        ldy k2,X
         beq .skip_k2_mul
 .k2_mul:
         asl
@@ -19,8 +19,8 @@ accu = ptr0+1
 .skip_k2_mul:
         sta accu
 
-        ldy k3,X
         lda frame_cnt
+        ldy k3,X
         beq .skip_k3_mul
 .k3_mul:
         asl
@@ -456,18 +456,20 @@ sp1_pos = ptr1
         sta COLUBK
         rts
 
-;;; Sine 1/K0*sin(K1 + K2*ptr0 + K3*frame_cnt) + K4
-;;; ptr0 is the character index
+;;; Sine 1/(2**K0)*sin(K1 + (2**K2)*chr_ind + (2**K3)*frame_cnt) + K4
+;;; Sine amplitude: 96 pixels
+;;; Display zone starting at 8 ending at 146 - see fx 4-5
+;;;            0       2      4       6       8        10       12      14
 k0:
-        dc.b   1,  1,  1,  1, 0,  0,  0,  0
+        dc.b   1,  1,  1,  1, 0,  0,  0,  0,  1,   1,   1,   1,  1,  1,  1,  1,
 k1:
-        dc.b   0, 32,  0, 96, 0, 64,  0, 96
+        dc.b   0, 32,  0, 96, 0, 64,  0, 96,  0, 128,   0, 128,  0, 64,  0, 64,
 k2:
-        dc.b   2,  2,  4,  4, 3,  3,  3,  3
+        dc.b   2,  2,  4,  4, 3,  3,  3,  3,  1,   1,   4,   4,  4,  4,  3,  3,
 k3:
-        dc.b   1,  1,  2,  2, 2,  2,  3,  3
+        dc.b   1,  1,  2,  2, 2,  2,  3,  3,  0,   0,   1,   1,  1,  1,  1,  1,
 k4:
-        dc.b  38, 68, 42, 64, 8, 50, 16, 42
+        dc.b  38, 68, 42, 64, 8, 50, 16, 42, 52,  52,  52,  52, 30, 76, 30, 76,
 
 fx_timeline:
-        dc.b   0, 2, 4, 6
+        dc.b  8, 10, 0, 14, 12, 2, 4, 6
