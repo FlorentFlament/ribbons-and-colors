@@ -93,19 +93,19 @@ JMPBank = $1FE6
         RORG $1000
 ;;; Bank 0 - main bank - everything bu the music player
 BANK0_DATA_START equ *
-        INCLUDE "bank1_data.asm"
+        INCLUDE "bank0_data.asm"
         echo "Bank0 data size:", (* - BANK0_DATA_START)d, "bytes"
 BANK0_CODE_START equ *
-        INCLUDE "bank1_code.asm"
+        INCLUDE "bank0_code.asm"
         echo "Bank0 code size:", (* - BANK0_CODE_START)d, "bytes"
         END_SEGMENT 0
 
 ;;; Bank 1 - music
 BANK1_DATA_START equ *
-        INCLUDE "bank0_data.asm"
+        INCLUDE "bank1_data.asm"
         echo "Bank1 data size:", (* - BANK1_DATA_START)d, "bytes"
 BANK1_CODE_START equ *
-        INCLUDE "bank0_code.asm"
+        INCLUDE "bank1_code.asm"
         echo "Bank1 code size:", (* - BANK1_CODE_START)d, "bytes"
 
 init:   CLEAN_START		; Initializes Registers & Memory
