@@ -11,7 +11,7 @@ generated:
 
 generated/text_words.asm: generated text/text0.txt
 	echo "text_data0:" > $@
-	echo "\tdc.b \"                                \"" >> $@
+	echo "\tdc.b \"                                         \"" >> $@
 	echo "text_data1:" >> $@
 	cat text/text0.txt | sed 's/\. /;   /g' | sed "s/[,']/;/g" | sed 's/^/\tdc.b "/' | sed 's/\.$$$\/;   "/' >> $@
 	echo "\tdc.b 0" >> $@
