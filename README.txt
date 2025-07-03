@@ -1,1 +1,1 @@
-flush-ribbons-and-colors.nfo
+ribbons-and-colors.nfo
