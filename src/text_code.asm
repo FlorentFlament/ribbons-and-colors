@@ -186,7 +186,9 @@ text_vblank:	SUBROUTINE
 	rts
 
 text_overscan:  SUBROUTINE
-        jsr tia_player            ; Play the music
+        ;; Play the music
+        SET_POINTER banksw_ptr,tia_player
+	jsr JMPBank
 
         ;; Manage mod_11, mod_22 and div_11 counters
         dec mod_22

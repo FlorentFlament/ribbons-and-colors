@@ -6,3 +6,4 @@
 ;;; Some generic variables
 ptr0 = tt_ptr			; Reusing tt_ptr as temporary pointer
 ptr1    dc.w    1
+banksw_ptr      ds.w    1
