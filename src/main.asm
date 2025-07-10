@@ -67,13 +67,14 @@ JMPBank = $1FE6
 	ORG RTSBank + (.BANK * 4096)
 	RORG RTSBank + (.BANK * 8192)
 	END_SEGMENT_CODE
-;$1FF4-$1FFB - These are the bankswitching hotspots - when 8 banks
+;;; $1FF4-$1FFB - These are the bankswitching hotspots - when 8 banks
 ;;; $1FF8-$1FF9 are the 2 bankswitching hotspots when 2 using 2 banks
-	.byte 0,0,0,0
-	.byte 0,0,0,$4C ;JMP Start (reading the instruction jumps to bank 7, i.e init address)
-;$1FFC-1FFF
-	.word $1FFB
-	.word $1FFB
+	.byte 0,0,0,0           ; $1FF4 - $1FF7 (unused with 2 banks)
+	.byte 0,$4C             ; $1FF8 - $1FF9 ($1FF9 is last bank hotspot)
+;;; $1FFA-1FFF
+	.word $1FF9             ; $1FFA - jmp $1FF9 on $1FF9
+	.word $1FF9             ; $1FFC - Cold start address -> $1FF9
+	.word $0000		; Unused bytes
 ;Bank .BANK+1
 	ORG $1000 + ((.BANK + 1) * 4096)
 	RORG $1000 + ((.BANK + 1) * 8192)
@@ -144,9 +145,8 @@ main_loop:	SUBROUTINE
 	ORG RTSBank + $1000
 	RORG RTSBank + $2000
 	END_SEGMENT_CODE
-	;$1FF4-$1FFB
-	.byte 0,0,0,0
-	.byte 0,0,0,$4C
-	;$1FFC-1FFF
-	.word init
-	.word init
+	.byte 0,0,0,0           ; $1FF4 - $1FF7 (unused with 2 banks)
+	.byte 0,$4C             ; $1FF8 - $1FF9 (bank 0 and 1 hotspots)
+	.word init              ; $1FFA - jmp $1FF9 on $1FF9
+	.word init              ; $1FFC - Cold start address -> $1FF9
+	.word $0000		; Unused bytes
